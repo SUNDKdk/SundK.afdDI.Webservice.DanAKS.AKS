@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html data-bs-theme='light' lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>DANAKS.v1.0.0 Dokumentation</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+        <link href="favicon.png" rel="icon" type="image/png" />
+    </head>
+    <body>
+        <header class="mb-5">
+            <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary py-4">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="https://www.rkkp.dk/">
+                        <img class="d-inline-block me-1 align-text-middle" src="favicon.png" width="50" height="50" />
+                        RKKP
+                    </a>
+                    <ul class="navbar-nav ms-3 me-auto">
+                        <li class="nav-item ms-3">
+                            <a class="btn btn-info btn-sm hidden" href="https://github.com/RKKPdk" id="github-link">
+                                <i class="bi bi-github"></i>
+                                 GitHub
+                            </a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/redoc">
+                                <i class="bi bi-window-sidebar"></i>
+                                 ReDocs
+                            </a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/docs">
+                                <i class="bi bi-menu-button-wide"></i>
+                                 Swagger UI
+                            </a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="btn btn-info btn-sm disabled" href="#">
+                                <i class="bi bi-database"></i>
+                                 RKKP DataModel
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <button class="btn btn-info btn-sm ms-2 visible" type="button" onclick="expandAll()" id="toggleExpand">
+                                    <i class="bi bi-arrows-expand"></i>
+                                     Expand All
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row align-items-center me-3">
+                            <div class="col">
+                                <button class="btn btn-info btn-sm ms-2 hidden" type="button" onclick="collapseAll()" id="toggleCollapse">
+                                    <i class="bi bi-arrows-collapse"></i>
+                                     Collapse All
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col flex-fill">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input switch-size" type="checkbox" id="toggleAdvView" />
+                                    <label class="form-check-label switch-size" for="flexSwitchCheckChecked">Advanced View</label>
+                                </div>
+                            </div>
+                            <div class="col flex-fill">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input switch-size" type="checkbox" id="toggleFlatView" />
+                                    <label class="form-check-label switch-size" for="toggleFlatView">Table View</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col flex-fill">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input switch-size" type="checkbox" id="toggleGrayscale" />
+                                    <label class="form-check-label switch-size" for="toggleGrayscale">Grayscale</label>
+                                </div>
+                            </div>
+                            <div class="col flex-fill">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input switch-size" type="checkbox" id="toggleDarkMode" />
+                                    <label class="form-check-label switch-size" for="toggleDarkMode">Dark Mode</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container-lg" style="margin-top:6rem !important">
+                <div class="row mt-4">
+                    <div class="col-sm-12 mt-5">
+                        <div class="alert alert-tertiary border" style="margin-bottom: 0px !important">
+                            <h4>DANAKS.v1.0.0</h4>
+                            <p>
+                                                        This is the documentation for the database queried through the DANAKS.v1.0.0 endpoint.
+                                                         </p>
+                            <hr />
+                            <p>
+                                                        Below you will find an overview of the data objects in the database, as well as their attributes, descriptions of attributes (when available),
+                                                        and requirement status. <br> <br>
+                                                        In the header you can find tools to customize your view of the documentation such as "Advanced View" which will show you more technical
+                                                        specifications, along with the Table View, Grayscale Mode and Dark Mode.
+                                                        </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        <div class="p-3 bg-body-tertiary border rounded-3">
+                            <input class="form-control form-control-lg" id="searchInput" placeholder="Search in objects and descriptions ..." type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs d-flex">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="showAll" type="button" onclick="filterTypes('showAll', this)"><i class="bi bi-square-fill gray-txt me-2"></i>Show all</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="tabActivity" type="button" onclick="filterTypes('groupActivity', this)"><i class="bi bi-square-fill bg-body-tertiary activity-txt me-2"></i>Activities</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="tabContact" type="button" onclick="filterTypes('groupContact', this)"><i class="bi bi-square-fill bg-body-tertiary contact-txt me-2"></i>Contacts</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link hidden" id="tabCourse" type="button"><i class="bi bi-square-fill course-txt me-2"></i>Courses</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="tabDiagnosis" type="button" onclick="filterTypes('groupDiagnosis', this)"><i class="bi bi-square-fill bg-body-tertiary diagnosis-txt me-2"></i>Diagnosis</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="tabObservation" type="button" onclick="filterTypes('groupObservation', this)"><i class="bi bi-square-fill bg-body-tertiary observation-txt me-2"></i>Observations</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="tabReport" type="button" onclick="filterTypes('groupReport', this)"><i class="bi bi-square-fill bg-body-tertiary report-txt me-2"></i>Report Objects</button>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <button data-bs-toggle='modal' data-bs-target='#jsonModal' class="btn btn-info btn-sm">
+                                    <i class="bi bi-filetype-json"></i>
+                                     API Examples
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="container container-border bg-body-tertiary">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="tabAll-pane">
+                                    <div id="groupActivity" class="groupActivity">
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiacRehabPlan1" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">Activity</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">CardiacRehabPlan</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="CardiacRehabPlan1">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">StatusCode</th>
+                                                            <td scope="row">Rehabilitering</td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">ja_patienten_accepterer</li>
+                                                                    <li class="list-group-item">ja_patienten_afslaar</li>
+                                                                    <li class="list-group-item">nej_ikke_relevant</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="groupContact" class="groupContact">
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#AdmissionDate1" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">Contact</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">AdmissionDate</li>
+                                                    <span class="required ms-auto">* Required</span>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="AdmissionDate1">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">DateTime</th>
+                                                            <td scope="row">Dato og tidspunkt for indlæggelse </td>
+                                                            <td scope="row">datetime</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="groupCourse" class="groupCourse"></div>
+                                    <div id="groupDiagnosis" class="groupDiagnosis">
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#VerifiedDiagnosis1" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">Diagnosis</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">VerifiedDiagnosis</li>
+                                                    <span class="required ms-auto">* Required</span>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="VerifiedDiagnosis1">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">DiagnosisCode</th>
+                                                            <td scope="row">Final diagnosis verified by cardiologist at discharge</td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">di200</li>
+                                                                    <li class="list-group-item">di213a</li>
+                                                                    <li class="list-group-item">di213b</li>
+                                                                    <li class="list-group-item">di213c</li>
+                                                                    <li class="list-group-item">di214</li>
+                                                                    <li class="list-group-item">ikke_aks</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="groupObservation" class="groupObservation">
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#AcuteHeartFailureKillipClass1" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">Observation</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">AcuteHeartFailureKillipClass</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="AcuteHeartFailureKillipClass1">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">ResultValue</th>
+                                                            <td scope="row">Notice! Killip Class 1: no AcuteHeartFailure </td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">killip_klasse1</li>
+                                                                    <li class="list-group-item">killip_klasse2</li>
+                                                                    <li class="list-group-item">killip_klasse3</li>
+                                                                    <li class="list-group-item">killip_klasse4</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiacArrestAfter12h2" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">Observation</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">CardiacArrestAfter12h</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="CardiacArrestAfter12h2">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">ResultValue</th>
+                                                            <td scope="row">CardiacArrest later than 12 hours after hospitalization </td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">ja</li>
+                                                                    <li class="list-group-item">nej</li>
+                                                                    <li class="list-group-item">ikke_relevant</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiacArrestWithin12h3" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">Observation</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">CardiacArrestWithin12h</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="CardiacArrestWithin12h3">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">ResultValue</th>
+                                                            <td scope="row">CardiacArrest prehospital or within 12 hours after hospitalization </td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">ja</li>
+                                                                    <li class="list-group-item">nej</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiacEcho4" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">Observation</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">CardiacEcho</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="CardiacEcho4">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">StatusCode</th>
+                                                            <td scope="row">Ekkokardiografi udført</td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">ja</li>
+                                                                    <li class="list-group-item">nej</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiogenicShockAfter12h5" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">Observation</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">CardiogenicShockAfter12h</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="CardiogenicShockAfter12h5">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">ResultValue</th>
+                                                            <td scope="row">CardiogenicShock later than 12 hours after hospitalization </td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">ja</li>
+                                                                    <li class="list-group-item">nej</li>
+                                                                    <li class="list-group-item">ikke_relevant</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#LVEF6" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">Observation</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">LVEF</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="LVEF6">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">ResultValue</th>
+                                                            <td scope="row">LVEF: Left ventricular ejection fraction </td>
+                                                            <td scope="row">int</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Min</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">0</li>
+                                                                </ul>
+                                                                <p style="margin:0px; font-weight: bold;">Max</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">100</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="groupReport" class="groupReport">
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#Organization" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">root</li>
+                                                    <li class="breadcrumb-item">Report</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">Organization</li>
+                                                    <span class="required ms-auto">* Required</span>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="Organization">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraint(s)</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">OrganizationType</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">Udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">sor</li>
+                                                                    <li class="list-group-item">shak</li>
+                                                                    <li class="list-group-item">regionskode</li>
+                                                                    <li class="list-group-item">kommunekode</li>
+                                                                    <li class="list-group-item">ydernummer</li>
+                                                                    <li class="list-group-item">lokationsnummer</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Identifier</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">string</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#Patient" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">root</li>
+                                                    <li class="breadcrumb-item">Report</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">Patient</li>
+                                                    <span class="required ms-auto">* Required</span>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="Patient">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">CivilRegistrationNumber</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">string</td>
+                                                            <td scope="row">Standard formatering af CPR.</td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">PatientId</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">string</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="modal modal-xl fade" id="jsonModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fs-5" id="jsonModalLabel">API request structure of DANAKS.v1.0.0</h5>
+                        <button data-bs-dismiss='modal' type="button" class="btn-close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-tertiary border">
+                            <p>
+                                                         This is a generated example of the json structure for submitting data to the root endpoint.
+                                                         </p>
+                            <hr />
+                            <p>
+                                                         For more in-depth information on the process of submitting data to the API, please see our
+                                                         <a href="https://www.rkkp.dk/systemer-og-support/indberetningssystemer/wsapi/teknisk-vejledning/" target='blank'>Technical Guide</a> or visit the
+                                                         <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI page</a>.
+                                                         There you can find an overview of the API endpoints, as well as detailed descriptions of the
+                                                         available API requests that be made to each endpoint. </p>
+                        </div>
+                        <ul class="nav nav-tabs" id="myTab" style="border-bottom: 0px !important">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="postJSONTab" onclick="jsonTabs(this.id)">POST Example</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="putJSONTab" onclick="jsonTabs(this.id)">PUT Example</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="" id="postJSONContent">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control textarea-tabs bg-body-tertiary current_json" id="json_post_textarea" style="height: 1000px">Missing JSON</textarea>
+                                    <label _for="floatingTextarea2">JSON POST Structure</label>
+                                </div>
+                            </div>
+                            <div class="hidden" id="putJSONContent">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control textarea-tabs bg-body-tertiary" id="json_put_textarea" style="height: 1000px">Missing JSON</textarea>
+                                    <label _for="floatingTextarea2">JSON PUT Structure</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-bs-dismiss='modal' type="button" class="btn btn-secondary btn-sm">Close Window</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="copyJsonButton" onclick="copyText()">Copy JSON</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" crossorgigin="anonymous"></script>
+        <script>
+            
+            // Hide a Column from Col Index in a table
+        function hideAdvancedColumn(columnIndex) {
+            var tables = document.querySelectorAll('table');
+            tables.forEach(function (table) {
+                var rows = table.querySelectorAll('tr');
+                rows.forEach(function (row) {
+                    var cells = row.querySelectorAll('th, td');
+                    if (columnIndex >= 0 && columnIndex < cells.length) {
+                        cells[columnIndex].classList.add('hidden-col');
+                    }
+                });
+            });
+        }
+
+        // Hide a Row based on Class in a table
+        function hideAdvancedRows() {
+            var rows = document.querySelectorAll('tr.advanced-data');
+            rows.forEach(function (row) {
+                row.classList.add('hidden-row');
+            });
+        }
+
+        // Toggle Advanced Data
+        var checkboxAdvView = document.getElementById('toggleAdvView');
+        checkboxAdvView.addEventListener('change', toggleAdvView);
+
+        function toggleAdvView() {
+            var hiddenCells = document.querySelectorAll('td.hidden-col, th.hidden-col');
+            var hiddenRows = document.querySelectorAll('tr.hidden-row, th.hidden-row');
+            var visibleCells = document.querySelectorAll('td.visible-col, th.visible-col');
+            var visibleRows = document.querySelectorAll('tr.visible-row, th.visible-row');
+            var gitHubIcon = document.getElementById('github-link');
+
+            if (checkboxAdvView.checked) {
+                hiddenCells.forEach(function (cell) {
+                    cell.classList.remove('hidden-col');
+                    cell.classList.add('visible-col');
+                });
+
+                hiddenRows.forEach(function (row) {
+                    row.classList.remove('hidden-row');
+                    row.classList.add('visible-row');
+                });
+                gitHubIcon.classList.remove('hidden');
+            } else {
+                visibleCells.forEach(function (cell) {
+                    cell.classList.remove('visible-col');
+                    cell.classList.add('hidden-col');
+                });
+
+                visibleRows.forEach(function (row) {
+                    row.classList.remove('visible-row');
+                    row.classList.add('hidden-row');
+                });
+                gitHubIcon.classList.add('hidden');
+            }
+        }
+        
+        </script>
+        <script>
+                    var allGroups = ["groupReport", "groupActivity", "groupContact", "groupCourse", "groupDiagnosis", "groupObservation", "groupGray"];
+
+        function filterTypes(targetGroup, button) {
+            var oldTab = document.querySelector('.nav-link.active');
+            oldTab.classList.remove('active');
+            button.classList.add('active');
+            if (targetGroup === "showAll") {
+                allGroups.forEach(function (elementId) {
+                    var a = document.getElementById(elementId);
+                    if (a) {  // Check if the element exists
+                        if (a.classList.contains("hidden")) {
+                            a.classList.remove("hidden");
+                        }
+                    }
+                });
+            } else {
+                allGroups.forEach(function (elementId) {
+                    var a = document.getElementById(elementId);
+                    if (a) {  // Check if the element exists
+                        if (elementId === targetGroup) {
+                            if (a.classList.contains("hidden")) {
+                                a.classList.remove("hidden");
+                            }
+                        } else {
+                            a.classList.add("hidden");
+                        }
+                    }
+                });
+            }
+        }
+        </script>
+        <script>
+            
+        function jsonTabs(button) {
+            console.log(button)
+            if (button === "postJSONTab") {
+                document.getElementById('putJSONTab').classList.remove('active');
+                document.getElementById('putJSONContent').classList.add('hidden');
+                document.getElementById('postJSONTab').classList.add('active');
+                document.getElementById('postJSONContent').classList.remove('hidden');
+                document.getElementById('json_post_textarea').classList.add('current_json');
+                document.getElementById('json_put_textarea').classList.remove('current_json');
+            } else {
+                document.getElementById('postJSONTab').classList.remove('active');
+                document.getElementById('postJSONContent').classList.add('hidden');
+                document.getElementById('putJSONTab').classList.add('active');
+                document.getElementById('putJSONContent').classList.remove('hidden');
+                document.getElementById('json_post_textarea').classList.remove('current_json');
+                document.getElementById('json_put_textarea').classList.add('current_json');
+            }
+            }
+
+        </script>
+        <script>
+            
+  var checkboxGrayscale = document.getElementById('toggleGrayscale');
+        checkboxGrayscale.addEventListener('change', toggleGrayscale);
+        var root = document.documentElement;
+        var colorGray = getComputedStyle(root).getPropertyValue('--colorGray');
+        var colorReport = getComputedStyle(root).getPropertyValue('--colorReport');
+        var colorActivity = getComputedStyle(root).getPropertyValue('--colorActivity');
+        var colorContact = getComputedStyle(root).getPropertyValue('--colorContact');
+        var colorCourse = getComputedStyle(root).getPropertyValue('--colorCourse');
+        var colorDiagnosis = getComputedStyle(root).getPropertyValue('--colorDiagnosis');
+        var colorObservation = getComputedStyle(root).getPropertyValue('--colorObservation');
+
+        function toggleGrayscale() {
+            if (checkboxGrayscale.checked) {
+                root.style.setProperty('--colorReport', colorGray);
+                root.style.setProperty('--colorActivity', colorGray);
+                root.style.setProperty('--colorContact', colorGray);
+                root.style.setProperty('--colorCourse', colorGray);
+                root.style.setProperty('--colorDiagnosis', colorGray);
+                root.style.setProperty('--colorObservation', colorGray);
+            } else {
+                root.style.setProperty('--colorReport', colorReport);
+                root.style.setProperty('--colorActivity', colorActivity);
+                root.style.setProperty('--colorContact', colorContact);
+                root.style.setProperty('--colorCourse', colorCourse);
+                root.style.setProperty('--colorDiagnosis', colorDiagnosis);
+                root.style.setProperty('--colorObservation', colorObservation);
+            }
+        }
+                               
+        </script>
+        <script>
+            
+                var checkboxFlatView = document.getElementById('toggleFlatView');
+        checkboxFlatView.addEventListener('change', toggleFlatView);
+
+        function toggleFlatView() {
+            var elements = document.querySelectorAll('.objectHeaderMain, .objectDescription, .objectBodyMain')
+
+            elements.forEach(function (element) {
+                if (checkboxFlatView.checked) {
+                    if (element.classList.contains("objectHeaderMain")) {
+                        element.classList.add("objectHeaderMainFlatView");
+                    }
+
+                    if (element.classList.contains("objectDescription")) {
+                        element.classList.add("objectDescriptionFlatView");
+                    }
+                    if (element.classList.contains("objectBodyMain")) {
+                        element.classList.add("objectBodyMainFlatView");
+                    }
+                } else {
+                    if (element.classList.contains("objectHeaderMainFlatView")) {
+                        element.classList.remove("objectHeaderMainFlatView");
+                    }
+                    if (element.classList.contains("objectDescriptionFlatView")) {
+                        element.classList.remove("objectDescriptionFlatView");
+                    }
+                    if (element.classList.contains("objectBodyMainFlatView")) {
+                        element.classList.remove("objectBodyMainFlatView");
+                    }
+                }
+            })
+        };
+                               
+        </script>
+        <script>
+            
+        var checkboxDarkMode = document.getElementById('toggleDarkMode');
+        checkboxDarkMode.addEventListener('change', toggleDarkMode);
+
+        function toggleDarkMode() {
+            if (checkboxDarkMode.checked) {
+                document.documentElement.setAttribute('data-bs-theme', 'dark')
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', 'light')
+            }
+        };
+    
+        </script>
+        <script>
+            
+        function copyText() {
+            var textarea = document.getElementsByClassName("current_json");
+            textarea[0].select();
+            document.execCommand("copy");
+        }
+    
+        </script>
+        <script>
+            
+        function expandAll() {
+            var divs = document.querySelectorAll('.collapse');
+            divs.forEach(function (div) {
+                div.classList.add('show');
+            });
+            document.getElementById('toggleExpand').classList.add('hidden');
+            document.getElementById('toggleExpand').classList.remove('visible');
+            document.getElementById('toggleCollapse').classList.add('visible');
+            document.getElementById('toggleCollapse').classList.remove('hidden');
+        }
+
+        function collapseAll() {
+            var divs = document.querySelectorAll('.collapse.show');
+            divs.forEach(function (div) {
+                div.classList.remove('show');
+            });
+            document.getElementById('toggleExpand').classList.add('visible');
+            document.getElementById('toggleExpand').classList.remove('hidden');
+            document.getElementById('toggleCollapse').classList.add('hidden');
+            document.getElementById('toggleCollapse').classList.remove('visible');
+        }
+    
+        </script>
+        <script>
+            
+    const searchInput = document.getElementById('searchInput');
+        const searchableObjects = document.querySelectorAll('.dataObject');
+
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm == "") {
+                searchableObjects.forEach(function (element) {
+                    if (element.classList.contains("hidden")) {
+                        element.classList.remove("hidden");
+                    }
+                });
+            } else {
+                searchableObjects.forEach(function (element) {
+                    var breadcrumb = element.querySelector('.breadcrumb-item.active');
+                    var description = element.querySelector('.objectDescription');
+                    const text = breadcrumb.innerText.toLowerCase() + " " + description.innerText.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        if (element.classList.contains("hidden")) {
+                            element.classList.remove("hidden");
+                        }
+                    } else {
+                        element.classList.add("hidden");
+                    }
+                });
+            }
+        });
+                           
+        </script>
+        <script>
+            
+        // Bootstrap tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+
+        window.addEventListener('DOMContentLoaded', function () {
+
+            // Hide Advanced Data
+
+            hideAdvancedRows() // Hide Rows with class advanced-data
+            hideAdvancedColumn(2); // Hide Column 1 (Type)
+        });
+                           
+        </script>
+    </body>
+</html>
