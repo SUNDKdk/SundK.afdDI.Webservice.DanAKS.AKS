@@ -112,7 +112,7 @@ main {
 }
 
 
-/* Layout */
+/* Layout   */
 
 .container-border {
 	border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
