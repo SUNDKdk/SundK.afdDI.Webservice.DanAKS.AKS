@@ -1,665 +1,563 @@
 {
-    "modelName": "DAH WSAPI",
+    "modelName": "DanAKS WSAPI",
     "collections": [
         {
-            "collectionName": "DAH",
+            "collectionName": "DanAKS",
             "type": "object",
             "properties": [
                 {
-                    "name": "Courses",
+                    "name": "Course",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "type": "document",
                     "properties": [],
                     "additionalProperties": false,
                     "color": "#555555",
-                    "GUID": "6630a072-09af-4aef-81c4-783c55592168"
+                    "GUID": "6630a072-09af-4aef-81c4-783c55592168",
+                    "error": {}
                 },
                 {
-                    "name": "Activities",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "type": "document",
-                    "properties": [],
-                    "additionalProperties": false,
-                    "color": "#555555",
-                    "GUID": "464f0966-bd83-45e1-aef0-f1a999973946"
-                },
-                {
-                    "name": "Observations",
+                    "name": "Activity",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "type": "document",
                     "properties": [
                         {
-                            "name": "PainEvaluation",
+                            "name": "CardiacRehabPlan",
                             "hackoladeMeta": {},
                             "isActivated": true,
                             "properties": [
                                 {
-                                    "name": "ResultCode",
+                                    "name": "StatusCode",
                                     "hackoladeMeta": {},
                                     "isActivated": true,
-                                    "childType": "ResultCode",
+                                    "childType": "StatusCode",
                                     "type": "string",
-                                    "GUID": "e17cfdfb-b657-41a6-8fb0-e9290f298d59",
+                                    "GUID": "dd21295d-d393-4116-a354-42b4903e5617",
                                     "enum": [
                                         {
-                                            "GUID": "cc972a94-9740-4c72-b123-539b5ec5fb11",
-                                            "Udfald": "VAS"
+                                            "GUID": "68bd8ed9-140f-4aaa-aa94-38dbc38ab5ec",
+                                            "Udfald": "ja_patienten_accepterer"
                                         },
                                         {
-                                            "GUID": "6fb6b428-d6a6-4c27-af0d-c296b1ea2650",
-                                            "Udfald": "NRS"
+                                            "GUID": "c6b9b57c-19f0-4ddf-91de-42cd398eb46f",
+                                            "Udfald": "ja_patienten_afslaar"
                                         },
                                         {
-                                            "GUID": "1b564105-32aa-4113-b238-0f1b264373d0",
-                                            "Udfald": "VRS"
-                                        },
-                                        {
-                                            "GUID": "724981d6-881e-4038-879c-acb05171cf3c",
-                                            "Udfald": "Andet"
+                                            "GUID": "ae5c8c31-658a-4f5f-912e-bb3633ed06a0",
+                                            "Udfald": "nej_ikke_relevant"
                                         }
                                     ],
-                                    "description": "Note: Bruges ved anden type af smertescore (ResultCode)",
-                                    "error": {}
-                                },
-                                {
-                                    "name": "ResultValue",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "numType": "float",
-                                    "childType": "ResultValue",
-                                    "type": "numeric",
-                                    "GUID": "bcdc8afd-e8f0-47be-8469-9cd8540f68fb",
-                                    "minValue": 0,
-                                    "description": "Værdi for smertescore",
+                                    "activ_rkkpStatusCode": true,
+                                    "description": "Rehabilitering",
+                                    "optional_rkkpStatusCode": true,
                                     "error": {}
                                 }
                             ],
-                            "rkkpClassCode": {
-                                "activ_rkkpClassCode": false,
-                                "value_rkkpClassCode": "",
-                                "GUID": "3e2429dc-4367-4dce-80ba-200051917436"
-                            },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": true,
-                                "GUID": "4955a2a7-fe44-47b7-b5db-990940b4491f",
-                                "optional_rkkpResCode": false
-                            },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": true,
-                                "GUID": "32537106-fb34-464f-b2e5-134630591129"
-                            },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "9259396e-f827-454f-a8fb-0cc44d40a425"
-                            },
-                            "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "145f87b9-e99e-46d4-9e52-177c7827d024"
-                            },
-                            "rkkpNote": {
-                                "activ_rkkpNote": true,
-                                "GUID": "9174dec3-1200-4dfe-9641-a01c0cafbaec",
-                                "optional_rkkpNote": true
-                            },
-                            "childType": "Observation",
-                            "type": "document",
-                            "GUID": "652016de-d9e4-4e1b-a2f8-ee200e5f2835",
                             "optional": true,
-                            "description": "Første smertemåling.\nHvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.",
-                            "error": {}
-                        },
-                        {
-                            "name": "OxygenSaturation",
-                            "hackoladeMeta": {},
-                            "isActivated": true,
-                            "properties": [
-                                {
-                                    "name": "ResultValue",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "childType": "ResultValue",
-                                    "type": "numeric",
-                                    "GUID": "2f3675de-5c88-49f8-832d-c35ea10bf2eb",
-                                    "minValue": 0,
-                                    "maxValue": 100,
-                                    "description": "Enhed = %",
-                                    "numType": "float",
-                                    "error": {
-                                        "name": false,
-                                        "code": false
-                                    }
-                                }
-                            ],
                             "rkkpClassCode": {
                                 "activ_rkkpClassCode": false,
                                 "value_rkkpClassCode": "",
-                                "GUID": "5c1a411d-b52d-4d9b-8c87-9f9d8198d615"
+                                "GUID": "f0a28db9-4ec2-409b-952a-8ae4a0c75087"
                             },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": false,
-                                "GUID": "21660699-0e90-4ab5-877e-807263b1ccf7"
+                            "rkkpOrgCode": {
+                                "activ_rkkpOrgCode": false,
+                                "GUID": "e918f6e3-0beb-41ba-9ca3-2bbb5dfb82a8"
                             },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": true,
-                                "GUID": "b81bb5ca-94a3-4a34-9aab-adc8b970f3ef"
+                            "rkkpOrgType": {
+                                "activ_rkkpOrgType": false,
+                                "GUID": "2ba26882-243b-4217-9e71-18cf27015048"
                             },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "3e3a096f-13bb-42f8-b484-abdcf37fb1a8"
+                            "rkkpStartDateTime": {
+                                "activ_rkkpStartDateTime": false,
+                                "GUID": "81c19fec-a76e-4e2d-8f20-b90e7df05155"
+                            },
+                            "rkkpEndDateTime": {
+                                "activ_rkkpEndDateTime": false,
+                                "GUID": "aba903c0-44ef-4de4-979e-b5ce2e8a139e"
                             },
                             "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "c41a4079-da0d-401e-adca-d13a935633ad"
+                                "activ_rkkpStatusCode": true,
+                                "GUID": "6bfe653a-e946-4517-8cdd-b089a5220e16"
                             },
                             "rkkpNote": {
                                 "activ_rkkpNote": false,
-                                "GUID": "199ad49d-bb64-4429-b14a-13fc6d3f5369"
+                                "GUID": "5f289f01-f086-4df2-9319-6f78098e0a09"
                             },
-                            "childType": "Observation",
+                            "childType": "Activity",
                             "type": "document",
-                            "GUID": "9d2d8eb7-ce0a-4845-ae4b-dcacd1f8435b",
-                            "optional": true,
-                            "description": "Første iltmætningsmåling.",
-                            "error": {}
-                        },
-                        {
-                            "name": "SystolicBloodPressure",
-                            "hackoladeMeta": {},
-                            "isActivated": true,
-                            "properties": [
-                                {
-                                    "name": "ResultValue",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "numType": "int",
-                                    "childType": "ResultValue",
-                                    "type": "numeric",
-                                    "GUID": "cc391974-580c-4e6a-b538-5a2a1d7ef223",
-                                    "minValue": 0,
-                                    "error": {}
-                                }
-                            ],
-                            "rkkpClassCode": {
-                                "activ_rkkpClassCode": false,
-                                "value_rkkpClassCode": "",
-                                "GUID": "2734ecd1-109a-45df-8590-d87831203226"
-                            },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": false,
-                                "GUID": "25ceea40-1ed3-497c-9114-e48a28722690"
-                            },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": true,
-                                "GUID": "92178136-5095-4b32-bf12-5e7870ce159e"
-                            },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "5319d0ed-432f-4582-902e-9df9e56486e2"
-                            },
-                            "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "806ce854-82bb-44d7-b695-c417a8ded7d8"
-                            },
-                            "rkkpNote": {
-                                "activ_rkkpNote": false,
-                                "GUID": "eea85003-7f4f-44ea-be05-02eb77eb0ab4"
-                            },
-                            "childType": "Observation",
-                            "type": "document",
-                            "GUID": "9d19b322-1bd3-474b-a39a-31d0634ddffd",
-                            "optional": true,
-                            "description": "Blodtryksmåling (stystolisk).",
-                            "error": {}
-                        },
-                        {
-                            "name": "GlascowComaScale",
-                            "hackoladeMeta": {},
-                            "isActivated": true,
-                            "properties": [
-                                {
-                                    "name": "ResultValue",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "childType": "ResultValue",
-                                    "type": "numeric",
-                                    "GUID": "9924d95a-ccd2-4b0d-be9d-fb4f9a139c30",
-                                    "minValue": 3,
-                                    "maxValue": 15,
-                                    "numType": "int",
-                                    "error": {
-                                        "name": false,
-                                        "code": false
-                                    }
-                                }
-                            ],
-                            "rkkpClassCode": {
-                                "activ_rkkpClassCode": false,
-                                "value_rkkpClassCode": "",
-                                "GUID": "2d238626-24dd-40fb-ba93-81d196d63705"
-                            },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": false,
-                                "GUID": "1cc6488e-0b95-42fe-97ec-ba614c89115f"
-                            },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": true,
-                                "GUID": "11360ce9-e069-497c-8ae2-f076934ad072"
-                            },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "79afd58c-7360-4253-a89c-d40751d0ad39"
-                            },
-                            "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "2f293b27-20b7-485a-82cf-d3bc791c124b"
-                            },
-                            "rkkpNote": {
-                                "activ_rkkpNote": false,
-                                "GUID": "3edb24d4-e6c1-4ba3-941b-37c44067df9f"
-                            },
-                            "childType": "Observation",
-                            "type": "document",
-                            "GUID": "11b91e55-abe8-4329-b663-554399fd3953",
-                            "optional": true,
-                            "description": "Første Glascow Coma Scale måling.",
-                            "error": {}
-                        },
-                        {
-                            "name": "AVPUScale",
-                            "hackoladeMeta": {},
-                            "isActivated": true,
-                            "properties": [
-                                {
-                                    "name": "ResultCode",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "childType": "ResultCode",
-                                    "type": "string",
-                                    "GUID": "8fcccd89-e548-4229-84fb-c8f24e0c23ee",
-                                    "enum": [
-                                        {
-                                            "GUID": "07cbd71a-7256-4237-ae28-fbe7db9fc5bc",
-                                            "Udfald": "A"
-                                        },
-                                        {
-                                            "GUID": "f66657ad-2023-4814-a01f-476b9355c700",
-                                            "Udfald": "V"
-                                        },
-                                        {
-                                            "GUID": "5a2d6b45-47df-4281-af88-60ea919c047c",
-                                            "Udfald": "P"
-                                        },
-                                        {
-                                            "GUID": "1d22a47c-191d-4fd6-b070-38c2ce17da63",
-                                            "Udfald": "U"
-                                        }
-                                    ],
-                                    "description": "A = Alert, \nV = Verbal, \nP = Pain, \nU = Unresponsive",
-                                    "error": {
-                                        "name": false,
-                                        "code": false
-                                    }
-                                }
-                            ],
-                            "rkkpClassCode": {
-                                "activ_rkkpClassCode": false,
-                                "value_rkkpClassCode": "",
-                                "GUID": "f4f95688-d6b5-47f6-9fd9-574b4f7c8a8b"
-                            },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": true,
-                                "GUID": "0f471776-4f37-4848-b3a7-7045120f8b1a"
-                            },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": false,
-                                "GUID": "67d6b650-032d-4e61-ad14-38b90deb8976"
-                            },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "ba7c35a9-97ca-49b8-82e3-baa97486caa2"
-                            },
-                            "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "d3424491-0e1c-4862-addc-1b167aa75b86"
-                            },
-                            "rkkpNote": {
-                                "activ_rkkpNote": false,
-                                "GUID": "b3b1974b-7389-456f-b391-ef6a833df47e"
-                            },
-                            "childType": "Observation",
-                            "type": "document",
-                            "GUID": "66175611-a488-4e6c-b467-2e39141dbd13",
-                            "optional": true,
-                            "description": "Første AVPU skala (bevidsthed).",
-                            "error": {}
-                        },
-                        {
-                            "name": "Triage",
-                            "hackoladeMeta": {},
-                            "isActivated": true,
-                            "properties": [
-                                {
-                                    "name": "ResultCode",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "childType": "ResultCode",
-                                    "type": "string",
-                                    "GUID": "0d5fcdbc-8fe5-4d54-a6c2-54e5c64ca027",
-                                    "enum": [
-                                        {
-                                            "GUID": "48512388-4ab3-43fa-892c-385812264bdb",
-                                            "Udfald": "R"
-                                        },
-                                        {
-                                            "GUID": "2ec6f116-22ca-46a0-a0a5-fffd31fa7199",
-                                            "Udfald": "O"
-                                        },
-                                        {
-                                            "GUID": "354f5a2c-687f-4e19-9b20-897b11bf722c",
-                                            "Udfald": "Y"
-                                        },
-                                        {
-                                            "GUID": "fe1a8e82-d2fc-4a2d-a5ec-c6416aca3dab",
-                                            "Udfald": "G"
-                                        },
-                                        {
-                                            "GUID": "66356154-9035-41af-b01f-dd1ddd866077",
-                                            "Udfald": "B"
-                                        }
-                                    ],
-                                    "description": "R = Red, \nO = Orange, \nY = Yellow, \nG = Green, \nB = Blue",
-                                    "error": {
-                                        "name": false,
-                                        "code": false
-                                    }
-                                }
-                            ],
-                            "rkkpClassCode": {
-                                "activ_rkkpClassCode": false,
-                                "value_rkkpClassCode": "",
-                                "GUID": "e87b8bb7-635d-449a-ab21-9894309360af"
-                            },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": true,
-                                "GUID": "666e6345-4b92-4cec-b5fb-8acfb54a3c81"
-                            },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": false,
-                                "GUID": "c63f0cde-c357-4127-a770-793aebeeb4d3"
-                            },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "5b65ad9d-9380-4eb8-a66b-2053f4bcac77"
-                            },
-                            "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "a04799ef-e104-4f48-a3bd-1d601820a32b"
-                            },
-                            "rkkpNote": {
-                                "activ_rkkpNote": false,
-                                "GUID": "9bfc42b9-09eb-4bfb-80f0-551b3ceddc7b"
-                            },
-                            "childType": "Observation",
-                            "type": "document",
-                            "GUID": "c5d6eb05-b61f-4d83-9520-39ff9178cacc",
-                            "optional": true,
-                            "description": "Første Triage kategorisering.",
-                            "error": {}
-                        },
-                        {
-                            "name": "OxygenDemand",
-                            "hackoladeMeta": {},
-                            "isActivated": true,
-                            "properties": [
-                                {
-                                    "name": "ResultCode",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "childType": "ResultCode",
-                                    "type": "string",
-                                    "GUID": "1cf4c2e9-fa57-4bbf-bb47-57691673cbe1",
-                                    "enum": [
-                                        {
-                                            "GUID": "f9cd161c-e6cf-47e8-8acd-c133cb7b5790",
-                                            "Udfald": "Y"
-                                        },
-                                        {
-                                            "GUID": "3a4ddfd9-f956-4451-b574-c1dd12c6447c",
-                                            "Udfald": "N"
-                                        }
-                                    ],
-                                    "description": "Y = Yes,\nN = No",
-                                    "error": {
-                                        "name": false,
-                                        "code": false
-                                    }
-                                }
-                            ],
-                            "rkkpClassCode": {
-                                "activ_rkkpClassCode": false,
-                                "value_rkkpClassCode": "",
-                                "GUID": "181b8cdf-f371-4080-820b-f8a497d479a6"
-                            },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": true,
-                                "GUID": "4bc51898-7173-4a26-9494-d97c65fb6b8f"
-                            },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": false,
-                                "GUID": "66b9cc0a-bf6f-484f-ab8d-90f16ed2efc8"
-                            },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "147ffcc5-0991-47da-ad57-550d554320b0"
-                            },
-                            "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "23091415-2ddc-4141-9125-d98fc8517757"
-                            },
-                            "rkkpNote": {
-                                "activ_rkkpNote": false,
-                                "GUID": "17025940-5f09-491e-b283-652009e392da"
-                            },
-                            "childType": "Observation",
-                            "type": "document",
-                            "GUID": "0d9f7eec-a1c5-4428-ab58-0bf2a6a33e38",
-                            "optional": true,
-                            "description": "Første iltbehov.",
-                            "error": {}
-                        },
-                        {
-                            "name": "RespiratoryRate",
-                            "hackoladeMeta": {},
-                            "isActivated": true,
-                            "properties": [
-                                {
-                                    "name": "ResultValue",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "numType": "int",
-                                    "childType": "ResultValue",
-                                    "type": "numeric",
-                                    "GUID": "c683b39c-1724-4af0-a4ac-fc367b034168",
-                                    "minValue": 0,
-                                    "error": {}
-                                }
-                            ],
-                            "rkkpClassCode": {
-                                "activ_rkkpClassCode": false,
-                                "value_rkkpClassCode": "",
-                                "GUID": "e1bea3f9-7f6f-45a7-ba22-009ebc64ff63"
-                            },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": false,
-                                "GUID": "1abeabb3-d2c9-4021-9d8b-b3bae97b5cd4"
-                            },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": true,
-                                "GUID": "7f36187c-0edf-44af-a21d-f4a4bf4cb0c9"
-                            },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "7b255e61-6502-4380-b85c-04c9ffd61d21"
-                            },
-                            "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "8258de9c-9388-4ce1-ad42-981dd741f058"
-                            },
-                            "rkkpNote": {
-                                "activ_rkkpNote": false,
-                                "GUID": "64960782-7c4b-4a7c-90cc-1daf23013449"
-                            },
-                            "childType": "Observation",
-                            "type": "document",
-                            "GUID": "3d3c960b-0d07-42a3-8c93-386e79154a50",
-                            "description": "Første respirationsfrekvens måling.",
-                            "optional": true,
-                            "error": {}
-                        },
-                        {
-                            "name": "Temperature",
-                            "hackoladeMeta": {},
-                            "isActivated": true,
-                            "properties": [
-                                {
-                                    "name": "ResultValue",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "numType": "float",
-                                    "childType": "ResultValue",
-                                    "type": "numeric",
-                                    "GUID": "40cbd3d2-2814-402c-9e10-7af41dfce866",
-                                    "minValue": 0,
-                                    "description": "Enhed = grader",
-                                    "error": {}
-                                }
-                            ],
-                            "rkkpClassCode": {
-                                "activ_rkkpClassCode": false,
-                                "value_rkkpClassCode": "",
-                                "GUID": "632883a2-0512-4aef-bcf3-70b48c9979da"
-                            },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": false,
-                                "GUID": "937e952c-38e7-4116-8c18-d56572198901"
-                            },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": true,
-                                "GUID": "398d143d-fb1f-4bca-a484-5a6fc42a3e26"
-                            },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "34d0481b-f60d-4462-b2f1-673cb5a70759"
-                            },
-                            "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "36a2557a-393a-4a0b-bd78-5f124d6269ed"
-                            },
-                            "rkkpNote": {
-                                "activ_rkkpNote": false,
-                                "GUID": "01a43f0e-0e81-46ac-8725-b4b6439dacda"
-                            },
-                            "childType": "Observation",
-                            "type": "document",
-                            "GUID": "7c54fcb1-9eba-42f1-a2f8-41a3bfff2d4e",
-                            "description": "Første temperatur måling.",
-                            "optional": true,
-                            "error": {}
-                        },
-                        {
-                            "name": "PulseRate",
-                            "hackoladeMeta": {},
-                            "isActivated": true,
-                            "properties": [
-                                {
-                                    "name": "ResultValue",
-                                    "hackoladeMeta": {},
-                                    "isActivated": true,
-                                    "numType": "int",
-                                    "childType": "ResultValue",
-                                    "type": "numeric",
-                                    "GUID": "36c2391d-6822-43a2-bba6-875f6419c2bc",
-                                    "minValue": 0,
-                                    "error": {}
-                                }
-                            ],
-                            "rkkpClassCode": {
-                                "activ_rkkpClassCode": false,
-                                "value_rkkpClassCode": "",
-                                "GUID": "b6e7409c-0f63-4b60-8d5f-6d2f9c6a2136"
-                            },
-                            "rkkpResCode": {
-                                "activ_rkkpResCode": false,
-                                "GUID": "654707b7-3f7f-4bc4-aef2-75c78d0ef80c"
-                            },
-                            "rkkpResValue": {
-                                "activ_rkkpResValue": true,
-                                "GUID": "52078f48-895b-494c-b65d-25829a58cbd5"
-                            },
-                            "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "af53cc2d-8767-42ae-8ecb-579dbd6237fe"
-                            },
-                            "rkkpStatusCode": {
-                                "activ_rkkpStatusCode": false,
-                                "GUID": "9241fdc6-3b0f-44e1-b448-1186f4b30a3f"
-                            },
-                            "rkkpNote": {
-                                "activ_rkkpNote": false,
-                                "GUID": "d421663f-9cfd-4238-bed9-3dc75de76996"
-                            },
-                            "childType": "Observation",
-                            "type": "document",
-                            "GUID": "7a349cb6-2fd9-4e78-87eb-4ec3184e0f5a",
-                            "description": "Første pulsmåling.",
-                            "optional": true,
+                            "GUID": "d1f273f5-3a75-450b-a12c-44a31a8dc8fe",
                             "error": {}
                         }
                     ],
                     "additionalProperties": false,
                     "color": "#555555",
-                    "GUID": "c28f4842-6075-4b91-be89-17540d8001cc"
+                    "GUID": "464f0966-bd83-45e1-aef0-f1a999973946",
+                    "error": {}
                 },
                 {
-                    "name": "Contacts",
+                    "name": "Observation",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "CardiacEcho",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "properties": [
+                                {
+                                    "name": "StatusCode",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "childType": "StatusCode",
+                                    "type": "string",
+                                    "GUID": "30f80f7f-0a89-4ea3-8f6a-5863a489ddde",
+                                    "enum": [
+                                        {
+                                            "GUID": "7523e9c3-fc14-4841-a863-1ccc02fcb38a",
+                                            "Udfald": "ja"
+                                        },
+                                        {
+                                            "GUID": "be087f4d-fc74-48dd-8d26-48c76d05adb4",
+                                            "Udfald": "nej"
+                                        }
+                                    ],
+                                    "description": "Ekkokardiografi udført",
+                                    "activ_rkkpStatusCode": true,
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "optional_rkkpStatusCode": true,
+                                    "error": {}
+                                }
+                            ],
+                            "optional": true,
+                            "rkkpClassCode": {
+                                "activ_rkkpClassCode": false,
+                                "value_rkkpClassCode": "",
+                                "GUID": "09f0be24-fa70-494d-9a59-8cea02150528"
+                            },
+                            "rkkpResCode": {
+                                "activ_rkkpResCode": false,
+                                "GUID": "afa6c775-b89c-40f2-9569-7e8e66ff6c4b"
+                            },
+                            "rkkpResValue": {
+                                "activ_rkkpResValue": false,
+                                "GUID": "9a388c06-d667-4b52-915a-16576f1c5ca9"
+                            },
+                            "rkkpDateTime": {
+                                "activ_rkkpDateTime": false,
+                                "GUID": "a03b4bd0-d28a-426c-9330-ab6eb6102cf8"
+                            },
+                            "rkkpStatusCode": {
+                                "activ_rkkpStatusCode": true,
+                                "GUID": "9fc0f448-1be4-4cef-8806-362aca0d9335"
+                            },
+                            "rkkpNote": {
+                                "activ_rkkpNote": false,
+                                "GUID": "52ab3ce8-0860-455e-ad62-1f15c6b0268c"
+                            },
+                            "childType": "Observation",
+                            "type": "document",
+                            "GUID": "11e84d0a-7f9a-41a9-92c2-cbf02077e3cf",
+                            "error": {}
+                        },
+                        {
+                            "name": "LVEF",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "int",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "401c6b76-97b5-4561-9ba4-b30cc60cc924",
+                                    "description": "LVEF: Left ventricular ejection fraction\n",
+                                    "minValue": 0,
+                                    "maxValue": 100,
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "optional": true,
+                                    "error": {}
+                                }
+                            ],
+                            "optional": true,
+                            "rkkpClassCode": {
+                                "activ_rkkpClassCode": false,
+                                "value_rkkpClassCode": "",
+                                "GUID": "41cd6b0c-b918-4961-b859-b1cd8eb9168b"
+                            },
+                            "rkkpResCode": {
+                                "activ_rkkpResCode": false,
+                                "GUID": "390d648f-3485-489b-a37b-8a66c16515c9"
+                            },
+                            "rkkpResValue": {
+                                "activ_rkkpResValue": false,
+                                "GUID": "e00d7725-acb3-48cf-8457-eeaa0bfd6d14"
+                            },
+                            "rkkpDateTime": {
+                                "activ_rkkpDateTime": false,
+                                "GUID": "33eb25c7-ff07-48a2-b964-54e937ec9df9"
+                            },
+                            "rkkpStatusCode": {
+                                "activ_rkkpStatusCode": false,
+                                "GUID": "e3f26f0f-3880-4765-9842-1fedcf99c483"
+                            },
+                            "rkkpNote": {
+                                "activ_rkkpNote": false,
+                                "GUID": "572b4788-ca8d-4cac-b9e7-01aa69d1ee7f"
+                            },
+                            "childType": "Observation",
+                            "type": "document",
+                            "GUID": "17cf1681-5b1e-4342-a767-d63311de1f9a",
+                            "error": {
+                                "name": false,
+                                "code": false
+                            }
+                        },
+                        {
+                            "name": "CardiacArrestWithin12h",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "int",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "f8b84fcc-20d9-412d-9738-85d8ef5ec5ad",
+                                    "resultValueType": "string",
+                                    "enum": [
+                                        {
+                                            "GUID": "86a7b430-f0ac-4a8e-9a88-045684db80a9",
+                                            "Udfald": "ja"
+                                        },
+                                        {
+                                            "GUID": "be1eba70-6891-4836-b59f-3b40002e0470",
+                                            "Udfald": "nej"
+                                        }
+                                    ],
+                                    "description": "CardiacArrest prehospital or  within 12 hours after hospitalization\n",
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "optional": true,
+                                    "error": {}
+                                }
+                            ],
+                            "optional": true,
+                            "rkkpClassCode": {
+                                "activ_rkkpClassCode": false,
+                                "value_rkkpClassCode": "",
+                                "GUID": "fd98df89-0c70-4592-9640-fda24d3d3ae6"
+                            },
+                            "rkkpResCode": {
+                                "activ_rkkpResCode": false,
+                                "GUID": "f9812ed3-f8d9-4e0e-8a7e-ababcb4ea417"
+                            },
+                            "rkkpResValue": {
+                                "activ_rkkpResValue": false,
+                                "GUID": "d9ff622d-ecf1-460e-9b36-0cf256af4d03"
+                            },
+                            "rkkpDateTime": {
+                                "activ_rkkpDateTime": false,
+                                "GUID": "476f6db5-039e-4748-8171-4e7168d6d894"
+                            },
+                            "rkkpStatusCode": {
+                                "activ_rkkpStatusCode": false,
+                                "GUID": "de4f9d72-adf7-4ad5-9f25-30eba1bf3259"
+                            },
+                            "rkkpNote": {
+                                "activ_rkkpNote": false,
+                                "GUID": "b12865ab-b892-4d50-a7af-10e541903c19"
+                            },
+                            "childType": "Observation",
+                            "type": "document",
+                            "GUID": "b493f983-e07c-429a-9aab-3089fb738c6d",
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "error": {
+                                "name": false,
+                                "code": false
+                            }
+                        },
+                        {
+                            "name": "CardiacArrestAfter12h",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "int",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "206222a5-b315-493a-84d6-e030cef44e0d",
+                                    "resultValueType": "string",
+                                    "enum": [
+                                        {
+                                            "GUID": "86a7b430-f0ac-4a8e-9a88-045684db80a9",
+                                            "Udfald": "ja"
+                                        },
+                                        {
+                                            "GUID": "be1eba70-6891-4836-b59f-3b40002e0470",
+                                            "Udfald": "nej"
+                                        },
+                                        {
+                                            "GUID": "279f90c3-5a9d-4d65-91b3-54047233a69c",
+                                            "Udfald": "ikke_relevant"
+                                        }
+                                    ],
+                                    "description": "CardiacArrest later than 12 hours after hospitalization\n",
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "optional": true,
+                                    "error": {}
+                                }
+                            ],
+                            "optional": true,
+                            "rkkpClassCode": {
+                                "activ_rkkpClassCode": false,
+                                "value_rkkpClassCode": "",
+                                "GUID": "fd98df89-0c70-4592-9640-fda24d3d3ae6"
+                            },
+                            "rkkpResCode": {
+                                "activ_rkkpResCode": false,
+                                "GUID": "f9812ed3-f8d9-4e0e-8a7e-ababcb4ea417"
+                            },
+                            "rkkpResValue": {
+                                "activ_rkkpResValue": false,
+                                "GUID": "d9ff622d-ecf1-460e-9b36-0cf256af4d03"
+                            },
+                            "rkkpDateTime": {
+                                "activ_rkkpDateTime": false,
+                                "GUID": "476f6db5-039e-4748-8171-4e7168d6d894"
+                            },
+                            "rkkpStatusCode": {
+                                "activ_rkkpStatusCode": false,
+                                "GUID": "de4f9d72-adf7-4ad5-9f25-30eba1bf3259"
+                            },
+                            "rkkpNote": {
+                                "activ_rkkpNote": false,
+                                "GUID": "b12865ab-b892-4d50-a7af-10e541903c19"
+                            },
+                            "childType": "Observation",
+                            "type": "document",
+                            "GUID": "435e1252-ecd2-4fef-8c8b-88a38894f6cb",
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "error": {
+                                "name": false,
+                                "code": false
+                            }
+                        },
+                        {
+                            "name": "CardiogenicShockAfter12h",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "int",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "8b757be1-9aea-402e-9f76-f924ccc50178",
+                                    "resultValueType": "string",
+                                    "enum": [
+                                        {
+                                            "GUID": "86a7b430-f0ac-4a8e-9a88-045684db80a9",
+                                            "Udfald": "ja"
+                                        },
+                                        {
+                                            "GUID": "be1eba70-6891-4836-b59f-3b40002e0470",
+                                            "Udfald": "nej"
+                                        },
+                                        {
+                                            "GUID": "279f90c3-5a9d-4d65-91b3-54047233a69c",
+                                            "Udfald": "ikke_relevant"
+                                        }
+                                    ],
+                                    "description": "CardiogenicShock later than 12 hours after hospitalization\n",
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "optional": true,
+                                    "error": {}
+                                }
+                            ],
+                            "optional": true,
+                            "rkkpClassCode": {
+                                "activ_rkkpClassCode": false,
+                                "value_rkkpClassCode": "",
+                                "GUID": "fd98df89-0c70-4592-9640-fda24d3d3ae6"
+                            },
+                            "rkkpResCode": {
+                                "activ_rkkpResCode": false,
+                                "GUID": "f9812ed3-f8d9-4e0e-8a7e-ababcb4ea417"
+                            },
+                            "rkkpResValue": {
+                                "activ_rkkpResValue": false,
+                                "GUID": "d9ff622d-ecf1-460e-9b36-0cf256af4d03"
+                            },
+                            "rkkpDateTime": {
+                                "activ_rkkpDateTime": false,
+                                "GUID": "476f6db5-039e-4748-8171-4e7168d6d894"
+                            },
+                            "rkkpStatusCode": {
+                                "activ_rkkpStatusCode": false,
+                                "GUID": "de4f9d72-adf7-4ad5-9f25-30eba1bf3259"
+                            },
+                            "rkkpNote": {
+                                "activ_rkkpNote": false,
+                                "GUID": "b12865ab-b892-4d50-a7af-10e541903c19"
+                            },
+                            "childType": "Observation",
+                            "type": "document",
+                            "GUID": "dad59d05-90e6-4301-9b76-de1f85d2116e",
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "error": {
+                                "name": false,
+                                "code": false
+                            }
+                        },
+                        {
+                            "name": "AcuteHeartFailureKillipClass",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "int",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "393bd40c-6818-4ffb-b1f1-aa68e3f09258",
+                                    "resultValueType": "string",
+                                    "enum": [
+                                        {
+                                            "GUID": "86a7b430-f0ac-4a8e-9a88-045684db80a9",
+                                            "Udfald": "Killip_klasse1"
+                                        },
+                                        {
+                                            "GUID": "be1eba70-6891-4836-b59f-3b40002e0470",
+                                            "Udfald": "Killip_klasse2"
+                                        },
+                                        {
+                                            "GUID": "279f90c3-5a9d-4d65-91b3-54047233a69c",
+                                            "Udfald": "Killip_klasse3"
+                                        },
+                                        {
+                                            "GUID": "7d199b0f-d1fb-4d5d-bc80-b429c9b7c9be",
+                                            "Udfald": "Killip_klasse4"
+                                        }
+                                    ],
+                                    "description": "Notice! Killip Class 1: no AcuteHeartFailure\n",
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "optional": true,
+                                    "error": {}
+                                }
+                            ],
+                            "optional": true,
+                            "rkkpClassCode": {
+                                "activ_rkkpClassCode": false,
+                                "value_rkkpClassCode": "",
+                                "GUID": "fd98df89-0c70-4592-9640-fda24d3d3ae6"
+                            },
+                            "rkkpResCode": {
+                                "activ_rkkpResCode": false,
+                                "GUID": "f9812ed3-f8d9-4e0e-8a7e-ababcb4ea417"
+                            },
+                            "rkkpResValue": {
+                                "activ_rkkpResValue": false,
+                                "GUID": "d9ff622d-ecf1-460e-9b36-0cf256af4d03"
+                            },
+                            "rkkpDateTime": {
+                                "activ_rkkpDateTime": false,
+                                "GUID": "476f6db5-039e-4748-8171-4e7168d6d894"
+                            },
+                            "rkkpStatusCode": {
+                                "activ_rkkpStatusCode": false,
+                                "GUID": "de4f9d72-adf7-4ad5-9f25-30eba1bf3259"
+                            },
+                            "rkkpNote": {
+                                "activ_rkkpNote": false,
+                                "GUID": "b12865ab-b892-4d50-a7af-10e541903c19"
+                            },
+                            "childType": "Observation",
+                            "type": "document",
+                            "GUID": "0d248ac8-9389-4f40-b45e-835879c7605a",
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "error": {
+                                "name": false,
+                                "code": false
+                            }
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "color": "#555555",
+                    "GUID": "c28f4842-6075-4b91-be89-17540d8001cc",
+                    "error": {}
+                },
+                {
+                    "name": "Contact",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "properties": [
                         {
+                            "name": "AdmissionDate",
                             "hackoladeMeta": {},
                             "isActivated": true,
-                            "properties": [],
+                            "properties": [
+                                {
+                                    "name": "DateTime",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "childType": "DateTime",
+                                    "type": "string",
+                                    "GUID": "7117cbb7-6c8e-4688-a0c3-16826eed3b07",
+                                    "description": "Dato og tidspunkt for indlæggelse\n",
+                                    "required": true,
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "error": {
+                                        "name": false,
+                                        "code": false
+                                    }
+                                }
+                            ],
                             "rkkpOrgCode": {
                                 "activ_rkkpOrgCode": false,
-                                "GUID": "3bd02805-100a-486e-b730-158237d5aaab"
+                                "GUID": "d63c0129-1057-4b7b-8d4b-5dcb2ae166f5"
                             },
                             "rkkpOrgType": {
                                 "activ_rkkpOrgType": false,
-                                "GUID": "2a55d740-016c-43a0-be82-d749521e874f"
+                                "GUID": "176b1599-573e-4f32-b671-cb54c17656e4"
                             },
                             "rkkpDateTime": {
-                                "activ_rkkpDateTime": true,
-                                "GUID": "852a624e-5de6-45e8-b451-e581930cf770",
-                                "optional_rkkpDateTime": false
+                                "activ_rkkpDateTime": false,
+                                "GUID": "f5a91794-9c13-48f6-93d0-3eacd9abb53c"
                             },
                             "rkkpStatusCode": {
                                 "activ_rkkpStatusCode": false,
-                                "GUID": "03f1bc8b-8c47-4257-a348-6e928993b516"
+                                "GUID": "bfc34fe0-2f21-4fc6-ab35-a77ab1bbb54b"
                             },
                             "rkkpNote": {
-                                "activ_rkkpNote": true,
-                                "GUID": "2117f441-c612-40d6-9ba5-0fea71211779",
-                                "optional_rkkpNote": false
+                                "activ_rkkpNote": false,
+                                "GUID": "83028d5e-3d84-4350-93d1-dd260e85a8ac"
                             },
                             "childType": "Contact",
                             "type": "document",
-                            "GUID": "20913ec5-c079-4706-958b-74ac9b4f2bf4",
-                            "name": "NoteType",
-                            "optional": true,
-                            "description": "Dato for første afsluttet lægenotat samt notattype (angives i elementet 'Note')",
+                            "GUID": "4355bd03-2152-4cc5-8d75-39828ad41554",
                             "error": {}
                         }
                     ],
@@ -674,7 +572,85 @@
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "type": "document",
-                    "properties": [],
+                    "properties": [
+                        {
+                            "name": "VerifiedDiagnosis",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "properties": [
+                                {
+                                    "name": "DiagnosisCode",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "childType": "DiagnosisType",
+                                    "type": "string",
+                                    "GUID": "39a61c62-86a8-4e0c-beba-27b751371ee1",
+                                    "enum": [
+                                        {
+                                            "GUID": "27fa6f5c-307e-4565-a3cc-d1fe729b18d0",
+                                            "Udfald": "DI200"
+                                        },
+                                        {
+                                            "GUID": "1db9c986-834f-494d-9600-4f8ba673153e",
+                                            "Udfald": "DI213A"
+                                        },
+                                        {
+                                            "GUID": "21722a6f-918b-4481-a6b4-bb6cbfd8eb47",
+                                            "Udfald": "DI213B"
+                                        },
+                                        {
+                                            "GUID": "f0da0b96-8d8a-4cd6-8ed1-bda963e217e3",
+                                            "Udfald": "DI213C"
+                                        },
+                                        {
+                                            "GUID": "20c7499f-bad6-470e-8940-addb0a821ec9",
+                                            "Udfald": "DI214"
+                                        },
+                                        {
+                                            "GUID": "e5c5384b-d563-409c-a076-719d44752af1",
+                                            "Udfald": "ikke_aks"
+                                        }
+                                    ],
+                                    "description": "Final diagnosis verified by cardiologist at discharge",
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "error": {
+                                        "name": false,
+                                        "code": false
+                                    }
+                                }
+                            ],
+                            "rkkpClassCode": {
+                                "activ_rkkpClassCode": false,
+                                "value_rkkpClassCode": "",
+                                "GUID": "0ad911c8-08e4-4f64-ba4a-48081ade95e3"
+                            },
+                            "rkkpOrgCode": {
+                                "activ_rkkpOrgCode": false,
+                                "GUID": "565c29ba-c1f7-41ea-96aa-0463895bc14f"
+                            },
+                            "rkkpOrgType": {
+                                "activ_rkkpOrgType": false,
+                                "GUID": "106722f2-1fa5-440c-8f28-be4fffcaa697"
+                            },
+                            "rkkpDateTime": {
+                                "activ_rkkpDateTime": false,
+                                "GUID": "078bd03a-61fe-4f03-a8b6-5c73b8f94602"
+                            },
+                            "rkkpStatusCode": {
+                                "activ_rkkpStatusCode": false,
+                                "GUID": "637e9bcf-8ed1-4d51-b2ce-367a964bc4bb"
+                            },
+                            "rkkpNote": {
+                                "activ_rkkpNote": false,
+                                "GUID": "13835c81-9038-4f72-bcf9-69e69a778139"
+                            },
+                            "childType": "Diagnosis",
+                            "type": "document",
+                            "GUID": "f66fb7a5-62d0-4360-8d8e-5d663e79d472",
+                            "error": {}
+                        }
+                    ],
                     "additionalProperties": false,
                     "color": "#555555",
                     "GUID": "12a5e029-14ab-41e1-9757-145016696779"
@@ -695,7 +671,7 @@
     ],
     "buckets": [
         {
-            "name": "DAH",
+            "name": "DanAKS",
             "type": "bucket",
             "collectionIds": [
                 "17f74ea6-64e2-49bc-9f74-d237d212ca37"
@@ -716,31 +692,31 @@
     "users": [],
     "diagramViews": [],
     "idToNameHashTable": {
-        "6630a072-09af-4aef-81c4-783c55592168": "Courses",
-        "464f0966-bd83-45e1-aef0-f1a999973946": "Activities",
-        "c28f4842-6075-4b91-be89-17540d8001cc": "Observations",
-        "f591215b-960f-4f9d-9263-9613b577d37d": "Contacts",
+        "6630a072-09af-4aef-81c4-783c55592168": "Course",
+        "464f0966-bd83-45e1-aef0-f1a999973946": "Activity",
+        "c28f4842-6075-4b91-be89-17540d8001cc": "Observation",
+        "f591215b-960f-4f9d-9263-9613b577d37d": "Contact",
         "12a5e029-14ab-41e1-9757-145016696779": "Diagnosis",
-        "17f74ea6-64e2-49bc-9f74-d237d212ca37": "DAH",
-        "3991a47e-ed5c-4874-8551-543877fb3bd4": "DAH",
-        "0d9f7eec-a1c5-4428-ab58-0bf2a6a33e38": "OxygenDemand",
-        "1cf4c2e9-fa57-4bbf-bb47-57691673cbe1": "ResultCode",
-        "7c54fcb1-9eba-42f1-a2f8-41a3bfff2d4e": "Temperature",
-        "3d3c960b-0d07-42a3-8c93-386e79154a50": "RespiratoryRate",
-        "7a349cb6-2fd9-4e78-87eb-4ec3184e0f5a": "PulseRate",
-        "9d19b322-1bd3-474b-a39a-31d0634ddffd": "SystolicBloodPressure",
-        "20913ec5-c079-4706-958b-74ac9b4f2bf4": "NoteType",
-        "c683b39c-1724-4af0-a4ac-fc367b034168": "ResultValue",
-        "36c2391d-6822-43a2-bba6-875f6419c2bc": "ResultValue",
-        "652016de-d9e4-4e1b-a2f8-ee200e5f2835": "PainEvaluation",
-        "e17cfdfb-b657-41a6-8fb0-e9290f298d59": "ResultCode",
-        "bcdc8afd-e8f0-47be-8469-9cd8540f68fb": "ResultValue",
-        "cc391974-580c-4e6a-b538-5a2a1d7ef223": "ResultValue",
-        "40cbd3d2-2814-402c-9e10-7af41dfce866": "ResultValue",
-        "c5d6eb05-b61f-4d83-9520-39ff9178cacc": "Triage",
-        "9d2d8eb7-ce0a-4845-ae4b-dcacd1f8435b": "OxygenSaturation",
-        "11b91e55-abe8-4329-b663-554399fd3953": "GlascowComaScale",
-        "66175611-a488-4e6c-b467-2e39141dbd13": "AVPUScale"
+        "17f74ea6-64e2-49bc-9f74-d237d212ca37": "DanAKS",
+        "3991a47e-ed5c-4874-8551-543877fb3bd4": "DanAKS",
+        "d1f273f5-3a75-450b-a12c-44a31a8dc8fe": "CardiacRehabPlan",
+        "dd21295d-d393-4116-a354-42b4903e5617": "StatusCode",
+        "11e84d0a-7f9a-41a9-92c2-cbf02077e3cf": "CardiacEcho",
+        "30f80f7f-0a89-4ea3-8f6a-5863a489ddde": "StatusCode",
+        "17cf1681-5b1e-4342-a767-d63311de1f9a": "LVEF",
+        "b493f983-e07c-429a-9aab-3089fb738c6d": "CardiacArrestWithin12h",
+        "435e1252-ecd2-4fef-8c8b-88a38894f6cb": "CardiacArrestAfter12h",
+        "dad59d05-90e6-4301-9b76-de1f85d2116e": "CardiogenicShockAfter12h",
+        "0d248ac8-9389-4f40-b45e-835879c7605a": "AcuteHeartFailureKillipClass",
+        "401c6b76-97b5-4561-9ba4-b30cc60cc924": "ResultValue",
+        "f8b84fcc-20d9-412d-9738-85d8ef5ec5ad": "ResultValue",
+        "206222a5-b315-493a-84d6-e030cef44e0d": "ResultValue",
+        "8b757be1-9aea-402e-9f76-f924ccc50178": "ResultValue",
+        "393bd40c-6818-4ffb-b1f1-aa68e3f09258": "ResultValue",
+        "4355bd03-2152-4cc5-8d75-39828ad41554": "AdmissionDate",
+        "7117cbb7-6c8e-4688-a0c3-16826eed3b07": "DateTime",
+        "f66fb7a5-62d0-4360-8d8e-5d663e79d472": "VerifiedDiagnosis",
+        "39a61c62-86a8-4e0c-beba-27b751371ee1": "DiagnosisCode"
     },
     "definitions": {
         "type": "definitions",
@@ -771,14 +747,14 @@
         },
         "customPropertiesUpdated": true
     },
-    "lastModifTS": "2023-09-05T12:46:16.927Z",
+    "lastModifTS": "2023-12-08T14:01:13.897Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "6.9.6"
+        "version": "6.10.18"
     },
     "settings": {
         "centralPane": {
@@ -824,7 +800,13 @@
                 "diagramViews": [],
                 "decorativeSymbols": [],
                 "nestedCollectionsLayout": "horizontal",
-                "options": [],
+                "options": [
+                    {
+                        "GUID": "17f74ea6-64e2-49bc-9f74-d237d212ca37",
+                        "autoWidth": false,
+                        "autoHeight": false
+                    }
+                ],
                 "relationshipUpdateDisabled": false
             },
             "collectionLevel": {},
