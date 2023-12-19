@@ -6,17 +6,6 @@
             "type": "object",
             "properties": [
                 {
-                    "name": "Course",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "type": "document",
-                    "properties": [],
-                    "additionalProperties": false,
-                    "color": "#555555",
-                    "GUID": "6630a072-09af-4aef-81c4-783c55592168",
-                    "error": {}
-                },
-                {
                     "name": "Activity",
                     "hackoladeMeta": {},
                     "isActivated": true,
@@ -49,7 +38,7 @@
                                         }
                                     ],
                                     "activ_rkkpStatusCode": true,
-                                    "description": "Rehabilitation",
+                                    "description": "Rehabilitation.",
                                     "optional_rkkpStatusCode": true,
                                     "error": {}
                                 }
@@ -87,7 +76,6 @@
                             "childType": "Activity",
                             "type": "document",
                             "GUID": "d1f273f5-3a75-450b-a12c-44a31a8dc8fe",
-                            "description": "Rehabilitation.",
                             "error": {}
                         }
                     ],
@@ -314,7 +302,7 @@
                                             "Udfald": "ikke_relevant"
                                         }
                                     ],
-                                    "description": "CardiacArrest later than 12 hours after hospitalization.",
+                                    "description": "Cardiac arrest later than 12 hours after hospitalization.",
                                     "foreignCollection": "",
                                     "foreignField": [],
                                     "optional": true,
@@ -687,7 +675,6 @@
     "users": [],
     "diagramViews": [],
     "idToNameHashTable": {
-        "6630a072-09af-4aef-81c4-783c55592168": "Course",
         "464f0966-bd83-45e1-aef0-f1a999973946": "Activity",
         "c28f4842-6075-4b91-be89-17540d8001cc": "Observation",
         "f591215b-960f-4f9d-9263-9613b577d37d": "Contact",
@@ -742,7 +729,7 @@
         },
         "customPropertiesUpdated": true
     },
-    "lastModifTS": "2023-12-19T08:49:14.075Z",
+    "lastModifTS": "2023-12-19T09:07:59.450Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
