@@ -49,7 +49,7 @@
                                         }
                                     ],
                                     "activ_rkkpStatusCode": true,
-                                    "description": "Rehabilitering",
+                                    "description": "Rehabilitation",
                                     "optional_rkkpStatusCode": true,
                                     "error": {}
                                 }
@@ -87,6 +87,7 @@
                             "childType": "Activity",
                             "type": "document",
                             "GUID": "d1f273f5-3a75-450b-a12c-44a31a8dc8fe",
+                            "description": "Rehabilitation.",
                             "error": {}
                         }
                     ],
@@ -123,7 +124,7 @@
                                             "Udfald": "nej"
                                         }
                                     ],
-                                    "description": "Ekkokardiografi udført",
+                                    "description": "Echocardiography performed.",
                                     "activ_rkkpStatusCode": true,
                                     "foreignCollection": "",
                                     "foreignField": [],
@@ -175,7 +176,7 @@
                                     "childType": "ResultValue",
                                     "type": "numeric",
                                     "GUID": "401c6b76-97b5-4561-9ba4-b30cc60cc924",
-                                    "description": "LVEF: Left ventricular ejection fraction\n",
+                                    "description": "LVEF: Left ventricular ejection fraction.",
                                     "minValue": 0,
                                     "maxValue": 100,
                                     "foreignCollection": "",
@@ -242,7 +243,7 @@
                                             "Udfald": "nej"
                                         }
                                     ],
-                                    "description": "CardiacArrest prehospital or  within 12 hours after hospitalization\n",
+                                    "description": "Cardiac arrest prehospital or  within 12 hours after hospitalization.",
                                     "foreignCollection": "",
                                     "foreignField": [],
                                     "optional": true,
@@ -313,7 +314,7 @@
                                             "Udfald": "ikke_relevant"
                                         }
                                     ],
-                                    "description": "CardiacArrest later than 12 hours after hospitalization\n",
+                                    "description": "CardiacArrest later than 12 hours after hospitalization.",
                                     "foreignCollection": "",
                                     "foreignField": [],
                                     "optional": true,
@@ -384,7 +385,7 @@
                                             "Udfald": "ikke_relevant"
                                         }
                                     ],
-                                    "description": "CardiogenicShock later than 12 hours after hospitalization\n",
+                                    "description": "Cardiogenic shock later than 12 hours after hospitalization.",
                                     "foreignCollection": "",
                                     "foreignField": [],
                                     "optional": true,
@@ -459,7 +460,7 @@
                                             "Udfald": "Killip_klasse4"
                                         }
                                     ],
-                                    "description": "Notice! Killip Class 1: no AcuteHeartFailure\n",
+                                    "description": "Killip class within 12 hours after hospitalization.",
                                     "foreignCollection": "",
                                     "foreignField": [],
                                     "optional": true,
@@ -525,14 +526,11 @@
                                     "childType": "DateTime",
                                     "type": "string",
                                     "GUID": "7117cbb7-6c8e-4688-a0c3-16826eed3b07",
-                                    "description": "Dato og tidspunkt for indlæggelse\n",
+                                    "description": "Date and time for admission.",
                                     "required": true,
                                     "foreignCollection": "",
                                     "foreignField": [],
-                                    "error": {
-                                        "name": false,
-                                        "code": false
-                                    }
+                                    "error": {}
                                 }
                             ],
                             "rkkpOrgCode": {
@@ -611,13 +609,10 @@
                                             "Udfald": "ikke_aks"
                                         }
                                     ],
-                                    "description": "Final diagnosis verified by cardiologist at discharge",
+                                    "description": "Final diagnosis verified by cardiologist at discharge.",
                                     "foreignCollection": "",
                                     "foreignField": [],
-                                    "error": {
-                                        "name": false,
-                                        "code": false
-                                    }
+                                    "error": {}
                                 }
                             ],
                             "rkkpClassCode": {
@@ -747,7 +742,7 @@
         },
         "customPropertiesUpdated": true
     },
-    "lastModifTS": "2023-12-08T14:01:13.897Z",
+    "lastModifTS": "2023-12-19T08:49:14.075Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
