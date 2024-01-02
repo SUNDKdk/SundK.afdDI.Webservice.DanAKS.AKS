@@ -30,7 +30,8 @@ main {
 
 .h2, h2 {
 	font-size: 1.25rem;
-	margin: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
     font-weight: 500;
     line-height: 1.2;
     color: var(--bs-heading-color);
@@ -111,6 +112,10 @@ main {
     border-top-width: var(--bs-border-width);
 }
 
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    vertical-align: -0.18rem !important;
+}
+
 
 /* Layout */
 
@@ -148,6 +153,14 @@ main {
 
 .th-required {
 	width: 10% !important;
+}
+
+.object_margin {
+	margin: 0rem 1rem 1rem 1rem !important;
+}
+
+.remove_object_margin {
+	margin: 0rem 0rem 0rem 0rem !important;
 }
 
 /* JSON Styles */
@@ -195,10 +208,12 @@ main {
 }
 
 .objectDescription {
+	/*
 	padding: 1rem !important;
-	margin: 0rem 1rem 1rem 1rem !important;
 	border-radius: var(--bs-border-radius-lg) !important;
 	border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+	*/
+	font-style: italic;
 }
 
 .objectDescriptionFlatView {
