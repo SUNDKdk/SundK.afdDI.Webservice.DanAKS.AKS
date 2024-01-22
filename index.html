@@ -98,7 +98,7 @@
                     <div class="col-sm-12 mt-5">
                         <div class="alert alert-tertiary border" style="margin-bottom: 0px !important">
                             <h1>Akut Koronart Syndrom</h1>
-                            <h4>Version: v1.0.0
+                            <h4>Version: 1.0.0
                                 <span class="badge bg-success hidden" style="vertical-align: super !important;font-size: 12px;">Newest version</span>
                             </h4>
                             <p>
@@ -208,9 +208,9 @@
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
-                                                                        <li class="list-group-item">ja_patienten_accepterer</li>
+                                                                        <li class="list-group-item">ja_patienten_accepterer </li>
                                                                         <li class="list-group-item">ja_patienten_afslaar</li>
-                                                                        <li class="list-group-item">nej_ikke_relevant</li>
+                                                                        <li class="list-group-item">nej_ikke_relevant </li>
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row"></td>
@@ -290,7 +290,7 @@
                                                         </thead>
                                                         <tbody class="table-group-divider">
                                                             <tr>
-                                                                <th scope="row">DiagnosisCode</th>
+                                                                <th scope="row">DiagnosisType</th>
                                                                 <td scope="row">Final diagnosis verified by cardiologist at discharge.</td>
                                                                 <td scope="row">Udfald/Enum (str)</td>
                                                                 <td scope="row">
@@ -385,7 +385,7 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">ResultValue</th>
-                                                                <td scope="row">Cardiac arrest later than 12 hours after hospitalization.</td>
+                                                                <td scope="row">Cardiogenic shock later than 12 hours after hospitalization.</td>
                                                                 <td scope="row">Udfald/Enum (str)</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
@@ -512,7 +512,7 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">ResultValue</th>
-                                                                <td scope="row">Cardiogenic shock later than 12 hours after hospitalization.</td>
+                                                                <td scope="row">CardiogenicShock later than 12 hours after hospitalization</td>
                                                                 <td scope="row">Udfald/Enum (str)</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
@@ -558,11 +558,11 @@
                                                                 <td scope="row">LVEF: Left ventricular ejection fraction.</td>
                                                                 <td scope="row">Integer</td>
                                                                 <td scope="row">
-                                                                    <p style="margin:0px; font-weight: bold;">Min</p>
+                                                                    <p style="margin:0px; font-weight: bold;">Min or Equal to</p>
                                                                     <ul class="list-group list-group-flush">
                                                                         <li class="list-group-item">0</li>
                                                                     </ul>
-                                                                    <p style="margin:0px; font-weight: bold;">Max</p>
+                                                                    <p style="margin:0px; font-weight: bold;">Max or Equal to</p>
                                                                     <ul class="list-group list-group-flush">
                                                                         <li class="list-group-item">100</li>
                                                                     </ul>
@@ -604,7 +604,7 @@
                                                             <tr>
                                                                 <th scope="row">OrganizationType</th>
                                                                 <td scope="row"></td>
-                                                                <td scope="row">Udfald/Enum (str)</td>
+                                                                <td scope="row">Udfald (str)</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
@@ -623,7 +623,7 @@
                                                             <tr>
                                                                 <th scope="row">Identifier</th>
                                                                 <td scope="row"></td>
-                                                                <td scope="row">String</td>
+                                                                <td scope="row">string</td>
                                                                 <td scope="row"></td>
                                                                 <td scope="row">
                                                                     <span class="required">* Required</span>
@@ -662,7 +662,7 @@
                                                             <tr>
                                                                 <th scope="row">CivilRegistrationNumber</th>
                                                                 <td scope="row"></td>
-                                                                <td scope="row">String</td>
+                                                                <td scope="row">string</td>
                                                                 <td scope="row">Standard formatering af CPR.</td>
                                                                 <td scope="row">
                                                                     <span class="required">* Required</span>
@@ -712,104 +712,13 @@
                         <div class="tab-content">
                             <div class="" id="postJSONContent">
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control textarea-tabs bg-body-tertiary current_json" id="json_post_textarea" style="height: 1000px">{
-    "Report": {
-        "Patient": {
-            "CivilRegistrationNumber": "2404852006"
-        },
-        "Organization": {
-            "OrganizationType": "regionskode",
-            "Identifier": "1234"
-        },
-        "Data": {
-            "Diagnosis": {
-                "VerifiedDiagnosis": {
-                    "DiagnosisCode": "di213a"
-                }
-            },
-            "Activity": {
-                "CardiacRehabPlan": {
-                    "StatusCode": "ja_patienten_afslaar"
-                }
-            },
-            "Contact": {
-                "AdmissionDate": {
-                    "DateTime": "18-03-2004 03:56:43"
-                }
-            },
-            "Observation": {
-                "AcuteHeartFailureKillipClass": {
-                    "ResultValue": "killip_klasse3"
-                },
-                "LVEF": {
-                    "ResultValue": 2
-                },
-                "CardiacArrestAfter12h": {
-                    "ResultValue": "ikke_relevant"
-                },
-                "CardiogenicShockAfter12h": {
-                    "ResultValue": "nej"
-                },
-                "CardiacEcho": {
-                    "StatusCode": "nej"
-                },
-                "CardiacArrestWithin12h": {
-                    "ResultValue": "nej"
-                }
-            }
-        }
-    }
-}</textarea>
+                                    <textarea class="form-control textarea-tabs bg-body-tertiary current_json" id="json_post_textarea" style="height: 1000px">Missing JSON</textarea>
                                     <label _for="floatingTextarea2">JSON POST Structure</label>
                                 </div>
                             </div>
                             <div class="hidden" id="putJSONContent">
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control textarea-tabs bg-body-tertiary" id="json_put_textarea" style="height: 1000px">{
-    "Report": {
-        "Organization": {
-            "OrganizationType": "regionskode",
-            "Identifier": "1234"
-        },
-        "Data": {
-            "Diagnosis": {
-                "VerifiedDiagnosis": {
-                    "DiagnosisCode": "di213a"
-                }
-            },
-            "Activity": {
-                "CardiacRehabPlan": {
-                    "StatusCode": "ja_patienten_accepterer"
-                }
-            },
-            "Contact": {
-                "AdmissionDate": {
-                    "DateTime": "24-04-1994 19:58:54"
-                }
-            },
-            "Observation": {
-                "AcuteHeartFailureKillipClass": {
-                    "ResultValue": "killip_klasse1"
-                },
-                "LVEF": {
-                    "ResultValue": 40
-                },
-                "CardiacArrestAfter12h": {
-                    "ResultValue": "ja"
-                },
-                "CardiogenicShockAfter12h": {
-                    "ResultValue": "ikke_relevant"
-                },
-                "CardiacEcho": {
-                    "StatusCode": "nej"
-                },
-                "CardiacArrestWithin12h": {
-                    "ResultValue": "nej"
-                }
-            }
-        }
-    }
-}</textarea>
+                                    <textarea class="form-control textarea-tabs bg-body-tertiary" id="json_put_textarea" style="height: 1000px">Missing JSON</textarea>
                                     <label _for="floatingTextarea2">JSON PUT Structure</label>
                                 </div>
                             </div>
@@ -1082,9 +991,7 @@
                 searchableObjects.forEach(function (element) {
                     var breadcrumb = element.querySelector('.breadcrumb-item.active');
                     var description = element.querySelector('.objectDescription');
-                    var breadcrumbText = breadcrumb ? breadcrumb.innerText.toLowerCase() : '';
-                    var descriptionText = description ? description.innerText.toLowerCase() : '';
-                    const text = breadcrumbText + " " + descriptionText;
+                    const text = breadcrumb.innerText.toLowerCase() + " " + description.innerText.toLowerCase();
                     if (text.includes(searchTerm)) {
                         if (element.classList.contains("hidden")) {
                             element.classList.remove("hidden");
