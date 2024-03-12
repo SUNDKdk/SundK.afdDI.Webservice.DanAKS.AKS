@@ -982,7 +982,7 @@
         </script>
         <script>
             
-    const searchInput = document.getElementById('searchInput');
+        const searchInput = document.getElementById('searchInput');
         const searchableObjects = document.querySelectorAll('.dataObject');
 
         searchInput.addEventListener('input', function () {
@@ -997,7 +997,15 @@
                 searchableObjects.forEach(function (element) {
                     var breadcrumb = element.querySelector('.breadcrumb-item.active');
                     var description = element.querySelector('.objectDescription');
-                    const text = breadcrumb.innerText.toLowerCase() + " " + description.innerText.toLowerCase();
+                    let breadcrumb_text = '';
+                    let description_text = '';
+                    if (breadcrumb) {
+                        breadcrumb_text = (breadcrumb.innerText || '').toLowerCase();
+                    }
+                    if (description) {
+                        description_text = (description.innerText || '').toLowerCase();
+                    }
+                    const text = breadcrumb_text + " " + description_text;
                     if (text.includes(searchTerm)) {
                         if (element.classList.contains("hidden")) {
                             element.classList.remove("hidden");
