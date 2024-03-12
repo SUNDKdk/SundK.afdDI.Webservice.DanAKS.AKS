@@ -28,6 +28,10 @@ main {
 	color: red;
 }
 
+.optional {
+	color: gray;
+}
+
 .h2, h2 {
 	font-size: 1.25rem;
 	margin-top: 1rem;
