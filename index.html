@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>DANAKS.v1.0.0 Dokumentation</title>
+        <title>DanAKS.v1.0.0 Dokumentation</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="style.css" rel="stylesheet" />
@@ -48,7 +48,7 @@
                             <div class="col">
                                 <button class="btn btn-info btn-sm ms-2 visible" type="button" onclick="expandAll()" id="toggleExpand">
                                     <i class="bi bi-arrows-expand"></i>
-                                     Expand All
+                                     Fold Alt Ud
                                 </button>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                             <div class="col">
                                 <button class="btn btn-info btn-sm ms-2 hidden" type="button" onclick="collapseAll()" id="toggleCollapse">
                                     <i class="bi bi-arrows-collapse"></i>
-                                     Collapse All
+                                     Fold Alt Ind
                                 </button>
                             </div>
                         </div>
@@ -64,13 +64,13 @@
                             <div class="col flex-fill">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input switch-size" type="checkbox" id="toggleAdvView" />
-                                    <label class="form-check-label switch-size" for="flexSwitchCheckChecked">Advanced View</label>
+                                    <label class="form-check-label switch-size" for="flexSwitchCheckChecked">Avanceret Visning</label>
                                 </div>
                             </div>
                             <div class="col flex-fill">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input switch-size" type="checkbox" id="toggleFlatView" />
-                                    <label class="form-check-label switch-size" for="toggleFlatView">Table View</label>
+                                    <label class="form-check-label switch-size" for="toggleFlatView">Tabel Visning</label>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                             <div class="col flex-fill">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input switch-size" type="checkbox" id="toggleGrayscale" />
-                                    <label class="form-check-label switch-size" for="toggleGrayscale">Grayscale</label>
+                                    <label class="form-check-label switch-size" for="toggleGrayscale">Gråskala</label>
                                 </div>
                             </div>
                             <div class="col flex-fill">
@@ -97,32 +97,72 @@
                 <div class="row mt-4">
                     <div class="col-sm-12 mt-5">
                         <div class="alert alert-tertiary border" style="margin-bottom: 0px !important">
-                            <h1>Akut Koronart Syndrom</h1>
-                            <h4>Version: 1.0.0
-                                <span class="badge bg-success hidden" style="vertical-align: super !important;font-size: 12px;">Newest version</span>
-                            </h4>
-                            <p>
-                                                        This is the documentation for the database queried through the DANAKS.v1.0.0 endpoint.
-                                                         </p>
-                            <hr />
-                            <p>
-                                                        Below you will find an overview of the data objects in the database, as well as their attributes, descriptions of attributes (when available),
-                                                        and requirement status. <br> <br>
-                                                        In the header you can find tools to customize your view of the documentation.
-                                                        </p>
+                            <div class="container-fluid">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-md-8">
+                                        <h1>Akut Koronart Syndrom</h1>
+                                    </div>
+                                    <div class="col-md-4 d-flex justify-content-end">
+                                        <ul class="nav ">
+                                            <li class="nav-item ms-2">
+                                                <button class="btn btn-info btn-sm disabled">
+                                                    <i class="bi bi-card-list"></i>
+                                                     Change Logs
+                                                </button>
+                                            </li>
+                                            <li class="nav-item ms-2">
+                                                <div class="dropdown">
+                                                    <button data-bs-toggle='dropdown' class="btn btn-info btn-sm disabled dropdown-toggle">
+                                                        <i class="bi bi-git"></i>
+                                                         Version History
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="dropdown-item">
+                                                            <a class="dropdown-item" href="#">Version 1.0.0</a>
+                                                        </li>
+                                                        <li class="dropdown-item">
+                                                            <a class="dropdown-item" href="#">Version 1.1.0</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>(DanAKS)</h5>
+                                        <h6>Endpoint version: 1.0.0
+                                            <span class="badge bg-success hidden" style="vertical-align: super !important;font-size: 12px;">Newest version</span>
+                                        </h6>
+                                        <p>
+                                                    Dette er endpoint dokumentation til databasen Akut Koronart Syndrom.
+                                                     </p>
+                                        <hr />
+                                        <h6>Populations beskrivelse</h6>
+                                        <p><p>...</p></p>
+                                        <hr />
+                                        <p>
+                                                    I denne dokumentation kan du finde en oversigt over dataobjekterne i databasen, samt deres attributter, beskrivelser af attributter (hvor tilgængeligt), og kravstatus.
+
+                                                    I headeren kan du finde værktøjer til at tilpasse din visning af dokumentationen.
+                                                    </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col-sm-12">
                         <div class="p-3 bg-body-tertiary border rounded-3">
-                            <input class="form-control form-control-lg" id="searchInput" placeholder="Search in objects and descriptions ..." type="text" />
+                            <input class="form-control form-control-lg" id="searchInput" placeholder="Søg i objektnavne og beskrivelser ..." type="text" />
                         </div>
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col-sm-12">
-                        <ul class="nav nav-tabs d-flex">
+                        <ul class="nav nav-tabs d-flex justify-content-start">
                             <li class="nav-item">
                                 <button class="nav-link active" id="showAll" type="button" onclick="filterTypes('showAll', this)"><i class="bi bi-square-fill gray-txt me-2"></i>Show all</button>
                             </li>
@@ -144,42 +184,22 @@
                             <li class="nav-item">
                                 <button class="nav-link" id="tabReport" type="button" onclick="filterTypes('groupReport', this)"><i class="bi bi-square-fill bg-body-tertiary report-txt me-2"></i>Report Objects</button>
                             </li>
-                            <li class="nav-item ms-auto">
-                                <div class="dropdown">
-                                    <button data-bs-toggle='dropdown' class="btn btn-info btn-sm disabled dropdown-toggle">
-                                        <i class="bi bi-git"></i>
-                                         Version History
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item">
-                                            <a class="dropdown-item" href="#">Version 1.0.0</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="dropdown-item" href="#">Version 1.1.0</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ms-2">
-                                <button class="btn btn-info btn-sm disabled">
-                                    <i class="bi bi-card-list"></i>
-                                     Change Logs
-                                </button>
-                            </li>
-                            <li class="nav-item ms-2">
-                                <a class="btn btn-info btn-sm" href="danaks_export_v1_0_0.xlsx">
-                                    <i class="bi bi-filetype-xlsx"></i>
-                                     Export XLSX
-                                </a>
-                            </li>
-                            <li class="nav-item ms-2">
-                                <button data-bs-toggle='modal' data-bs-target='#jsonModal' class="btn btn-info btn-sm">
-                                    <i class="bi bi-filetype-json"></i>
-                                     API Examples
-                                </button>
-                            </li>
                         </ul>
                         <div class="container container-border bg-body-tertiary">
+                            <ul class="nav mb-2 d-flex justify-content-end">
+                                <li class="nav-item me-2">
+                                    <a class="btn btn-info btn-sm" href="danaks_export_v1_0_0.xlsx">
+                                        <i class="bi bi-filetype-xlsx"></i>
+                                         Eksporter (Excel)
+                                    </a>
+                                </li>
+                                <li class="nav-item ms-2">
+                                    <button data-bs-toggle='modal' data-bs-target='#jsonModal' class="btn btn-info btn-sm">
+                                        <i class="bi bi-filetype-json"></i>
+                                         JSON Eksempel
+                                    </button>
+                                </li>
+                            </ul>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="tabAll-pane">
                                     <div id="groupActivity" class="groupActivity">
@@ -187,7 +207,7 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiacRehabPlan1" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Activity</li>
                                                     <li aria-current='page' class="breadcrumb-item active">CardiacRehabPlan</li>
                                                 </ol>
@@ -195,7 +215,6 @@
                                             <div class="collapse m-3 objectBodyMain" id="CardiacRehabPlan1">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
-                                                    <h2 class="table_view_hider">Attributes</h2>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
                                                             <tr>
@@ -209,14 +228,14 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">StatusCode</th>
-                                                                <td scope="row">Rehabilitation.</td>
-                                                                <td scope="row">Udfald/Enum (str)</td>
+                                                                <td scope="row"><p>Rehabilitation.</p></td>
+                                                                <td scope="row">str, Enum</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
-                                                                        <li class="list-group-item">ja_patienten_accepterer</li>
-                                                                        <li class="list-group-item">ja_patienten_afslaar</li>
-                                                                        <li class="list-group-item">nej_ikke_relevant</li>
+                                                                        <li class="list-group-item">"ja_patienten_accepterer"</li>
+                                                                        <li class="list-group-item">"ja_patienten_afslaar"</li>
+                                                                        <li class="list-group-item">"nej_ikke_relevant"</li>
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row"></td>
@@ -232,16 +251,15 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#AdmissionDate1" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Contact</li>
                                                     <li aria-current='page' class="breadcrumb-item active">AdmissionDate</li>
-                                                    <span class="required ms-auto">* Required</span>
+                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
                                                 </ol>
                                             </a>
                                             <div class="collapse m-3 objectBodyMain" id="AdmissionDate1">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
-                                                    <h2 class="table_view_hider">Attributes</h2>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
                                                             <tr>
@@ -255,11 +273,11 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">DateTime</th>
-                                                                <td scope="row">Date and time for admission.</td>
+                                                                <td scope="row"><p>Date and time for admission.</p></td>
                                                                 <td scope="row">DateTime</td>
                                                                 <td scope="row"></td>
                                                                 <td scope="row">
-                                                                    <span class="required">* Required</span>
+                                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -274,16 +292,15 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#VerifiedDiagnosis1" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Diagnosis</li>
                                                     <li aria-current='page' class="breadcrumb-item active">VerifiedDiagnosis</li>
-                                                    <span class="required ms-auto">* Required</span>
+                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
                                                 </ol>
                                             </a>
                                             <div class="collapse m-3 objectBodyMain" id="VerifiedDiagnosis1">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
-                                                    <h2 class="table_view_hider">Attributes</h2>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
                                                             <tr>
@@ -297,21 +314,21 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">DiagnosisType</th>
-                                                                <td scope="row">Final diagnosis verified by cardiologist at discharge.</td>
-                                                                <td scope="row">Udfald/Enum (str)</td>
+                                                                <td scope="row"><p>Final diagnosis verified by cardiologist at discharge.</p></td>
+                                                                <td scope="row">str, Enum</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
-                                                                        <li class="list-group-item">di200</li>
-                                                                        <li class="list-group-item">di213a</li>
-                                                                        <li class="list-group-item">di213b</li>
-                                                                        <li class="list-group-item">di213c</li>
-                                                                        <li class="list-group-item">di214</li>
-                                                                        <li class="list-group-item">ikke_aks</li>
+                                                                        <li class="list-group-item">"di200"</li>
+                                                                        <li class="list-group-item">"di213a"</li>
+                                                                        <li class="list-group-item">"di213b"</li>
+                                                                        <li class="list-group-item">"di213c"</li>
+                                                                        <li class="list-group-item">"di214"</li>
+                                                                        <li class="list-group-item">"ikke_aks"</li>
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row">
-                                                                    <span class="required">* Required</span>
+                                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -325,7 +342,7 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#AcuteHeartFailureKillipClass1" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Observation</li>
                                                     <li aria-current='page' class="breadcrumb-item active">AcuteHeartFailureKillipClass</li>
                                                 </ol>
@@ -333,7 +350,6 @@
                                             <div class="collapse m-3 objectBodyMain" id="AcuteHeartFailureKillipClass1">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
-                                                    <h2 class="table_view_hider">Attributes</h2>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
                                                             <tr>
@@ -347,15 +363,15 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">ResultValue</th>
-                                                                <td scope="row">Killip class within 12 hours after hospitalization.</td>
-                                                                <td scope="row">Udfald/Enum (str)</td>
+                                                                <td scope="row"><p>Killip class within 12 hours after hospitalization.</p></td>
+                                                                <td scope="row">str, Enum</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
-                                                                        <li class="list-group-item">killip_klasse1</li>
-                                                                        <li class="list-group-item">killip_klasse2</li>
-                                                                        <li class="list-group-item">killip_klasse3</li>
-                                                                        <li class="list-group-item">killip_klasse4</li>
+                                                                        <li class="list-group-item">"killip_klasse1"</li>
+                                                                        <li class="list-group-item">"killip_klasse2"</li>
+                                                                        <li class="list-group-item">"killip_klasse3"</li>
+                                                                        <li class="list-group-item">"killip_klasse4"</li>
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row"></td>
@@ -369,7 +385,7 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiacArrestAfter12h2" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Observation</li>
                                                     <li aria-current='page' class="breadcrumb-item active">CardiacArrestAfter12h</li>
                                                 </ol>
@@ -377,7 +393,6 @@
                                             <div class="collapse m-3 objectBodyMain" id="CardiacArrestAfter12h2">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
-                                                    <h2 class="table_view_hider">Attributes</h2>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
                                                             <tr>
@@ -391,14 +406,14 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">ResultValue</th>
-                                                                <td scope="row">Cardiogenic shock later than 12 hours after hospitalization.</td>
-                                                                <td scope="row">Udfald/Enum (str)</td>
+                                                                <td scope="row"><p>Cardiogenic shock later than 12 hours after hospitalization.</p></td>
+                                                                <td scope="row">str, Enum</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
-                                                                        <li class="list-group-item">ja</li>
-                                                                        <li class="list-group-item">nej</li>
-                                                                        <li class="list-group-item">ikke_relevant</li>
+                                                                        <li class="list-group-item">"ja"</li>
+                                                                        <li class="list-group-item">"nej"</li>
+                                                                        <li class="list-group-item">"ikke_relevant"</li>
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row"></td>
@@ -412,7 +427,7 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiacArrestWithin12h3" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Observation</li>
                                                     <li aria-current='page' class="breadcrumb-item active">CardiacArrestWithin12h</li>
                                                 </ol>
@@ -420,7 +435,6 @@
                                             <div class="collapse m-3 objectBodyMain" id="CardiacArrestWithin12h3">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
-                                                    <h2 class="table_view_hider">Attributes</h2>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
                                                             <tr>
@@ -434,13 +448,13 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">ResultValue</th>
-                                                                <td scope="row">Cardiac arrest prehospital or within 12 hours after hospitalization.</td>
-                                                                <td scope="row">Udfald/Enum (str)</td>
+                                                                <td scope="row"><p>Cardiac arrest prehospital or within 12 hours after hospitalization.</p></td>
+                                                                <td scope="row">str, Enum</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
-                                                                        <li class="list-group-item">ja</li>
-                                                                        <li class="list-group-item">nej</li>
+                                                                        <li class="list-group-item">"ja"</li>
+                                                                        <li class="list-group-item">"nej"</li>
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row"></td>
@@ -454,7 +468,7 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiacEcho4" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Observation</li>
                                                     <li aria-current='page' class="breadcrumb-item active">CardiacEcho</li>
                                                 </ol>
@@ -462,7 +476,6 @@
                                             <div class="collapse m-3 objectBodyMain" id="CardiacEcho4">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
-                                                    <h2 class="table_view_hider">Attributes</h2>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
                                                             <tr>
@@ -476,13 +489,13 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">StatusCode</th>
-                                                                <td scope="row">Echocardiography performed.</td>
-                                                                <td scope="row">Udfald/Enum (str)</td>
+                                                                <td scope="row"><p>Echocardiography performed.</p></td>
+                                                                <td scope="row">str, Enum</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
-                                                                        <li class="list-group-item">ja</li>
-                                                                        <li class="list-group-item">nej</li>
+                                                                        <li class="list-group-item">"ja"</li>
+                                                                        <li class="list-group-item">"nej"</li>
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row"></td>
@@ -496,7 +509,7 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#CardiogenicShockAfter12h5" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Observation</li>
                                                     <li aria-current='page' class="breadcrumb-item active">CardiogenicShockAfter12h</li>
                                                 </ol>
@@ -504,7 +517,6 @@
                                             <div class="collapse m-3 objectBodyMain" id="CardiogenicShockAfter12h5">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
-                                                    <h2 class="table_view_hider">Attributes</h2>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
                                                             <tr>
@@ -518,14 +530,14 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">ResultValue</th>
-                                                                <td scope="row">CardiogenicShock later than 12 hours after hospitalization</td>
-                                                                <td scope="row">Udfald/Enum (str)</td>
+                                                                <td scope="row"><p>CardiogenicShock later than 12 hours after hospitalization</p></td>
+                                                                <td scope="row">str, Enum</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
-                                                                        <li class="list-group-item">ja</li>
-                                                                        <li class="list-group-item">nej</li>
-                                                                        <li class="list-group-item">ikke_relevant</li>
+                                                                        <li class="list-group-item">"ja"</li>
+                                                                        <li class="list-group-item">"nej"</li>
+                                                                        <li class="list-group-item">"ikke_relevant"</li>
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row"></td>
@@ -539,7 +551,7 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#LVEF6" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Observation</li>
                                                     <li aria-current='page' class="breadcrumb-item active">LVEF</li>
                                                 </ol>
@@ -547,7 +559,6 @@
                                             <div class="collapse m-3 objectBodyMain" id="LVEF6">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
-                                                    <h2 class="table_view_hider">Attributes</h2>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
                                                             <tr>
@@ -561,7 +572,7 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">ResultValue</th>
-                                                                <td scope="row">LVEF: Left ventricular ejection fraction.</td>
+                                                                <td scope="row"><p>LVEF: Left ventricular ejection fraction.</p></td>
                                                                 <td scope="row">Integer</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Min or Equal to</p>
@@ -586,10 +597,10 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#Organization" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Report</li>
                                                     <li aria-current='page' class="breadcrumb-item active">Organization</li>
-                                                    <span class="required ms-auto">* Required</span>
+                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
                                                 </ol>
                                             </a>
                                             <div class="collapse m-3 objectBodyMain" id="Organization">
@@ -609,7 +620,7 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">OrganizationType</th>
-                                                                <td scope="row"></td>
+                                                                <td scope="row">Typen af Identifier, som bliver indberettet.</td>
                                                                 <td scope="row">Udfald (str)</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
@@ -623,16 +634,16 @@
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row">
-                                                                    <span class="required">* Required</span>
+                                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">Identifier</th>
-                                                                <td scope="row"></td>
+                                                                <td scope="row">ID på den enkelte organisation, der er ansvarlig for indberetning af patienten. Typen af ID skal følge den indsendte OrganizationType.</td>
                                                                 <td scope="row">string</td>
                                                                 <td scope="row"></td>
                                                                 <td scope="row">
-                                                                    <span class="required">* Required</span>
+                                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -644,10 +655,10 @@
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#Patient" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DANAKS</li>
+                                                    <li class="breadcrumb-item">DanAKS</li>
                                                     <li class="breadcrumb-item">Report</li>
                                                     <li aria-current='page' class="breadcrumb-item active">Patient</li>
-                                                    <span class="required ms-auto">* Required</span>
+                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
                                                 </ol>
                                             </a>
                                             <div class="collapse m-3 objectBodyMain" id="Patient">
@@ -671,7 +682,7 @@
                                                                 <td scope="row">string</td>
                                                                 <td scope="row">Standard formatering af CPR.</td>
                                                                 <td scope="row">
-                                                                    <span class="required">* Required</span>
+                                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -691,21 +702,19 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title fs-5" id="jsonModalLabel">API request structure of DANAKS.v1.0.0</h5>
+                        <h5 class="modal-title fs-5" id="jsonModalLabel">API request structure of DanAKS.v1.0.0</h5>
                         <button data-bs-dismiss='modal' type="button" class="btn-close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-tertiary border">
                             <p>
-                                                         This is a generated example of the json structure for submitting data to the root endpoint.
+                                                        Dette er et auto-genereret eksempel af JSON strukturen til indberetning af data.
                                                          </p>
                             <hr />
                             <p>
-                                                         For more in-depth information on the process of submitting data to the API, please see our
-                                                         <a href="https://www.rkkp.dk/systemer-og-support/indberetningssystemer/wsapi/teknisk-vejledning/" target='blank'>Technical Guide</a> or visit the
-                                                         <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI page</a>.
-                                                         There you can find an overview of the API endpoints, as well as detailed descriptions of the
-                                                         available API requests that be made to each endpoint. </p>
+                                                         For mere information om processen af at indsende data til API'en, se venligst vores tekniske guide på www.rkkp.dk eller besøg <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a>.
+
+                                                         På <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a> kan du finde en oversigt over API endpoints, samt detaljerede beskrivelser af de tilgængelige API forespørgsler, som kan foretages til hvert endpoint. </p>
                         </div>
                         <ul class="nav nav-tabs" id="myTab" style="border-bottom: 0px !important">
                             <li class="nav-item">
@@ -718,13 +727,13 @@
                         <div class="tab-content">
                             <div class="" id="postJSONContent">
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control textarea-tabs bg-body-tertiary current_json" id="json_post_textarea" style="height: 1000px">Missing JSON</textarea>
+                                    <textarea class="form-control textarea-tabs bg-body-tertiary current_json" id="json_post_textarea" style="height: 1000px">JSON eksempel ikke fundet. Se Swagger UI for eksempler på json struktur - link kan findes i toppen af siden.</textarea>
                                     <label _for="floatingTextarea2">JSON POST Structure</label>
                                 </div>
                             </div>
                             <div class="hidden" id="putJSONContent">
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control textarea-tabs bg-body-tertiary" id="json_put_textarea" style="height: 1000px">Missing JSON</textarea>
+                                    <textarea class="form-control textarea-tabs bg-body-tertiary" id="json_put_textarea" style="height: 1000px">JSON eksempel ikke fundet. Se Swagger UI for eksempler på json struktur - link kan findes i toppen af siden.</textarea>
                                     <label _for="floatingTextarea2">JSON PUT Structure</label>
                                 </div>
                             </div>
