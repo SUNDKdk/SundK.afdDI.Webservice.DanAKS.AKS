@@ -20,6 +20,11 @@ body {
 	font-size: 0.8rem !important;
 }
 
+p {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
 main {
 	min-height: 1000px;
 }
@@ -30,15 +35,6 @@ main {
 
 .optional {
 	color: gray;
-}
-
-.h2, h2 {
-	font-size: 1.25rem;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-    font-weight: 500;
-    line-height: 1.2;
-    color: var(--bs-heading-color);
 }
 
 /* Overwrite Bootstrap Behavior */

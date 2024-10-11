@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>DanAKS.v1.0.0 Dokumentation</title>
+        <title>DanAKS 1.0.0 Dokumentation</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="style.css" rel="stylesheet" />
@@ -25,21 +25,21 @@
                             </a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/redoc">
+                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/redoc" id="redocs-link">
                                 <i class="bi bi-window-sidebar"></i>
                                  ReDocs
                             </a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/docs">
+                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/docs" id="swagger-link">
                                 <i class="bi bi-menu-button-wide"></i>
                                  Swagger UI
                             </a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="btn btn-info btn-sm disabled" href="#">
+                            <a class="btn btn-info btn-sm disabled" href="#" id="ldm-link">
                                 <i class="bi bi-database"></i>
-                                 RKKP DataModel
+                                 RKKP Data Model
                             </a>
                         </li>
                     </ul>
@@ -131,22 +131,16 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h5>(DanAKS)</h5>
-                                        <h6>Endpoint version: 1.0.0
+                                        <h4>DanAKS</h4>
+                                        <h6>Dokumentation til endpoint version: 1.0.0
                                             <span class="badge bg-success hidden" style="vertical-align: super !important;font-size: 12px;">Newest version</span>
                                         </h6>
-                                        <p>
-                                                    Dette er endpoint dokumentation til databasen Akut Koronart Syndrom.
-                                                     </p>
+                                        <p>Dette er endpoint dokumentation til databasen Akut Koronart Syndrom.</p>
                                         <hr />
-                                        <h6>Populations beskrivelse</h6>
+                                        <h5>Implementeringsguide</h5>
                                         <p><p>...</p></p>
                                         <hr />
-                                        <p>
-                                                    I denne dokumentation kan du finde en oversigt over dataobjekterne i databasen, samt deres attributter, beskrivelser af attributter (hvor tilgængeligt), og kravstatus.
-
-                                                    I headeren kan du finde værktøjer til at tilpasse din visning af dokumentationen.
-                                                    </p>
+                                        <p>I denne dokumentation kan du finde en oversigt over dataobjekterne i databasen, samt deres attributter, beskrivelser af attributter (hvor tilgængeligt), og kravstatus. I headeren kan du finde værktøjer til at tilpasse din visning af dokumentationen.</p>
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +182,7 @@
                         <div class="container container-border bg-body-tertiary">
                             <ul class="nav mb-2 d-flex justify-content-end">
                                 <li class="nav-item me-2">
-                                    <a class="btn btn-info btn-sm" href="danaks_export_v1_0_0.xlsx">
+                                    <a class="btn btn-info btn-sm" href="danaks_export_1_0_0.xlsx">
                                         <i class="bi bi-filetype-xlsx"></i>
                                          Eksporter (Excel)
                                     </a>
@@ -702,19 +696,14 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title fs-5" id="jsonModalLabel">API request structure of DanAKS.v1.0.0</h5>
+                        <h5 class="modal-title fs-5" id="jsonModalLabel">API request struktur af DanAKS 1.0.0</h5>
                         <button data-bs-dismiss='modal' type="button" class="btn-close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-tertiary border">
-                            <p>
-                                                        Dette er et auto-genereret eksempel af JSON strukturen til indberetning af data.
-                                                         </p>
+                            <p>Dette er et auto-genereret eksempel af JSON strukturen til indberetning af data.</p>
                             <hr />
-                            <p>
-                                                         For mere information om processen af at indsende data til API'en, se venligst vores tekniske guide på www.rkkp.dk eller besøg <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a>.
-
-                                                         På <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a> kan du finde en oversigt over API endpoints, samt detaljerede beskrivelser af de tilgængelige API forespørgsler, som kan foretages til hvert endpoint. </p>
+                            <p>For mere information om processen af at indsende data til API'en, se venligst vores tekniske guide                                         på www.rkkp.dk eller besøg <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a>.                                         På <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a> kan du finde en oversigt                                         over API endpoints, samt detaljerede beskrivelser af de tilgængelige API forespørgsler, som kan foretages til hvert endpoint. </p>
                         </div>
                         <ul class="nav nav-tabs" id="myTab" style="border-bottom: 0px !important">
                             <li class="nav-item">
@@ -747,286 +736,7 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" crossorgigin="anonymous"></script>
-        <script>
-            
-            // Hide a Column from Col Index in a table
-        function hideAdvancedColumn(columnIndex) {
-            var tables = document.querySelectorAll('table');
-            tables.forEach(function (table) {
-                var rows = table.querySelectorAll('tr');
-                rows.forEach(function (row) {
-                    var cells = row.querySelectorAll('th, td');
-                    if (columnIndex >= 0 && columnIndex < cells.length) {
-                        cells[columnIndex].classList.add('hidden-col');
-                    }
-                });
-            });
-        }
-
-        // Hide a Row based on Class in a table
-        function hideAdvancedRows() {
-            var rows = document.querySelectorAll('tr.advanced-data');
-            rows.forEach(function (row) {
-                row.classList.add('hidden-row');
-            });
-        }
-
-        // Toggle Advanced Data
-        var checkboxAdvView = document.getElementById('toggleAdvView');
-        checkboxAdvView.addEventListener('change', toggleAdvView);
-
-        function toggleAdvView() {
-            var hiddenCells = document.querySelectorAll('td.hidden-col, th.hidden-col');
-            var hiddenRows = document.querySelectorAll('tr.hidden-row, th.hidden-row');
-            var visibleCells = document.querySelectorAll('td.visible-col, th.visible-col');
-            var visibleRows = document.querySelectorAll('tr.visible-row, th.visible-row');
-            var gitHubIcon = document.getElementById('github-link');
-
-            if (checkboxAdvView.checked) {
-                hiddenCells.forEach(function (cell) {
-                    cell.classList.remove('hidden-col');
-                    cell.classList.add('visible-col');
-                });
-
-                hiddenRows.forEach(function (row) {
-                    row.classList.remove('hidden-row');
-                    row.classList.add('visible-row');
-                });
-                gitHubIcon.classList.remove('hidden');
-            } else {
-                visibleCells.forEach(function (cell) {
-                    cell.classList.remove('visible-col');
-                    cell.classList.add('hidden-col');
-                });
-
-                visibleRows.forEach(function (row) {
-                    row.classList.remove('visible-row');
-                    row.classList.add('hidden-row');
-                });
-                gitHubIcon.classList.add('hidden');
-            }
-        }
-        
-        </script>
-        <script>
-                    var allGroups = ["groupReport", "groupActivity", "groupContact", "groupCourse", "groupDiagnosis", "groupObservation", "groupGray"];
-
-        function filterTypes(targetGroup, button) {
-            var oldTab = document.querySelector('.nav-link.active');
-            oldTab.classList.remove('active');
-            button.classList.add('active');
-            if (targetGroup === "showAll") {
-                allGroups.forEach(function (elementId) {
-                    var a = document.getElementById(elementId);
-                    if (a) {  // Check if the element exists
-                        if (a.classList.contains("hidden")) {
-                            a.classList.remove("hidden");
-                        }
-                    }
-                });
-            } else {
-                allGroups.forEach(function (elementId) {
-                    var a = document.getElementById(elementId);
-                    if (a) {  // Check if the element exists
-                        if (elementId === targetGroup) {
-                            if (a.classList.contains("hidden")) {
-                                a.classList.remove("hidden");
-                            }
-                        } else {
-                            a.classList.add("hidden");
-                        }
-                    }
-                });
-            }
-        }
-        </script>
-        <script>
-            
-        function jsonTabs(button) {
-            console.log(button)
-            if (button === "postJSONTab") {
-                document.getElementById('putJSONTab').classList.remove('active');
-                document.getElementById('putJSONContent').classList.add('hidden');
-                document.getElementById('postJSONTab').classList.add('active');
-                document.getElementById('postJSONContent').classList.remove('hidden');
-                document.getElementById('json_post_textarea').classList.add('current_json');
-                document.getElementById('json_put_textarea').classList.remove('current_json');
-            } else {
-                document.getElementById('postJSONTab').classList.remove('active');
-                document.getElementById('postJSONContent').classList.add('hidden');
-                document.getElementById('putJSONTab').classList.add('active');
-                document.getElementById('putJSONContent').classList.remove('hidden');
-                document.getElementById('json_post_textarea').classList.remove('current_json');
-                document.getElementById('json_put_textarea').classList.add('current_json');
-            }
-            }
-
-        </script>
-        <script>
-            
-  var checkboxGrayscale = document.getElementById('toggleGrayscale');
-        checkboxGrayscale.addEventListener('change', toggleGrayscale);
-        var root = document.documentElement;
-        var colorGray = getComputedStyle(root).getPropertyValue('--colorGray');
-        var colorReport = getComputedStyle(root).getPropertyValue('--colorReport');
-        var colorActivity = getComputedStyle(root).getPropertyValue('--colorActivity');
-        var colorContact = getComputedStyle(root).getPropertyValue('--colorContact');
-        var colorCourse = getComputedStyle(root).getPropertyValue('--colorCourse');
-        var colorDiagnosis = getComputedStyle(root).getPropertyValue('--colorDiagnosis');
-        var colorObservation = getComputedStyle(root).getPropertyValue('--colorObservation');
-
-        function toggleGrayscale() {
-            if (checkboxGrayscale.checked) {
-                root.style.setProperty('--colorReport', colorGray);
-                root.style.setProperty('--colorActivity', colorGray);
-                root.style.setProperty('--colorContact', colorGray);
-                root.style.setProperty('--colorCourse', colorGray);
-                root.style.setProperty('--colorDiagnosis', colorGray);
-                root.style.setProperty('--colorObservation', colorGray);
-            } else {
-                root.style.setProperty('--colorReport', colorReport);
-                root.style.setProperty('--colorActivity', colorActivity);
-                root.style.setProperty('--colorContact', colorContact);
-                root.style.setProperty('--colorCourse', colorCourse);
-                root.style.setProperty('--colorDiagnosis', colorDiagnosis);
-                root.style.setProperty('--colorObservation', colorObservation);
-            }
-        }
-                               
-        </script>
-        <script>
-            
-                var checkboxFlatView = document.getElementById('toggleFlatView');
-        checkboxFlatView.addEventListener('change', toggleFlatView);
-
-        function toggleFlatView() {
-            var elements = document.querySelectorAll('.objectHeaderMain, .objectDescription, .objectBodyMain, .object_margin, .table_view_hider')
-
-            elements.forEach(function (element) {
-                if (checkboxFlatView.checked) {
-                    if (element.classList.contains("objectHeaderMain")) {
-                        element.classList.add("objectHeaderMainFlatView");
-                    }
-
-                    if (element.classList.contains("objectDescription")) {
-                        element.classList.add("objectDescriptionFlatView");
-                    }
-                    if (element.classList.contains("objectBodyMain")) {
-                        element.classList.add("objectBodyMainFlatView");
-                    }
-                    if (element.classList.contains("object_margin")) {
-                        element.classList.add("remove_object_margin");
-                    }
-                    if (element.classList.contains("table_view_hider")) {
-                        element.classList.add("hidden");
-                    }
-                } else {
-                    if (element.classList.contains("objectHeaderMainFlatView")) {
-                        element.classList.remove("objectHeaderMainFlatView");
-                    }
-                    if (element.classList.contains("objectDescriptionFlatView")) {
-                        element.classList.remove("objectDescriptionFlatView");
-                    }
-                    if (element.classList.contains("objectBodyMainFlatView")) {
-                        element.classList.remove("objectBodyMainFlatView");
-                    }
-                    if (element.classList.contains("object_margin")) {
-                        element.classList.remove("remove_object_margin");
-                    }
-                    if (element.classList.contains("table_view_hider")) {
-                        element.classList.remove("hidden");
-                    }
-                }
-            })
-        };
-                               
-        </script>
-        <script>
-            
-        var checkboxDarkMode = document.getElementById('toggleDarkMode');
-        checkboxDarkMode.addEventListener('change', toggleDarkMode);
-
-        function toggleDarkMode() {
-            if (checkboxDarkMode.checked) {
-                document.documentElement.setAttribute('data-bs-theme', 'dark')
-            } else {
-                document.documentElement.setAttribute('data-bs-theme', 'light')
-            }
-        };
-    
-        </script>
-        <script>
-            
-        function copyText() {
-            var textarea = document.getElementsByClassName("current_json");
-            textarea[0].select();
-            document.execCommand("copy");
-        }
-    
-        </script>
-        <script>
-            
-        function expandAll() {
-            var divs = document.querySelectorAll('.collapse');
-            divs.forEach(function (div) {
-                div.classList.add('show');
-            });
-            document.getElementById('toggleExpand').classList.add('hidden');
-            document.getElementById('toggleExpand').classList.remove('visible');
-            document.getElementById('toggleCollapse').classList.add('visible');
-            document.getElementById('toggleCollapse').classList.remove('hidden');
-        }
-
-        function collapseAll() {
-            var divs = document.querySelectorAll('.collapse.show');
-            divs.forEach(function (div) {
-                div.classList.remove('show');
-            });
-            document.getElementById('toggleExpand').classList.add('visible');
-            document.getElementById('toggleExpand').classList.remove('hidden');
-            document.getElementById('toggleCollapse').classList.add('hidden');
-            document.getElementById('toggleCollapse').classList.remove('visible');
-        }
-    
-        </script>
-        <script>
-            
-        const searchInput = document.getElementById('searchInput');
-        const searchableObjects = document.querySelectorAll('.dataObject');
-
-        searchInput.addEventListener('input', function () {
-            const searchTerm = searchInput.value.toLowerCase();
-            if (searchTerm == "") {
-                searchableObjects.forEach(function (element) {
-                    if (element.classList.contains("hidden")) {
-                        element.classList.remove("hidden");
-                    }
-                });
-            } else {
-                searchableObjects.forEach(function (element) {
-                    var breadcrumb = element.querySelector('.breadcrumb-item.active');
-                    var description = element.querySelector('.objectDescription');
-                    let breadcrumb_text = '';
-                    let description_text = '';
-                    if (breadcrumb) {
-                        breadcrumb_text = (breadcrumb.innerText || '').toLowerCase();
-                    }
-                    if (description) {
-                        description_text = (description.innerText || '').toLowerCase();
-                    }
-                    const text = breadcrumb_text + " " + description_text;
-                    if (text.includes(searchTerm)) {
-                        if (element.classList.contains("hidden")) {
-                            element.classList.remove("hidden");
-                        }
-                    } else {
-                        element.classList.add("hidden");
-                    }
-                });
-            }
-        });
-                           
-        </script>
+        <script src="js/rkkp.js" crossorgigin="anonymous"></script>
         <script>
             
         // Bootstrap tooltips
