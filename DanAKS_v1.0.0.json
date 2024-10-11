@@ -64,7 +64,8 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "e04cf9ef-2880-4e4a-8b1e-8d12cceaff48",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "099884e0-5fa7-43e3-b354-286e718102d3"
                         }
                     ],
                     "childType": "Group_Activity",
@@ -117,7 +118,8 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "a84e188b-9b0d-4a98-a8df-8577ecc3aeaf",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "e979e2e2-b0fb-4cad-af78-7d671633ba4f"
                         },
                         {
                             "name": "LVEF",
@@ -156,7 +158,8 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "f4dfa656-54c9-4cd0-969b-497aed3abca3",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "b3e14716-517f-44f8-8e52-730294cba830"
                         },
                         {
                             "name": "CardiacArrestWithin12h",
@@ -199,7 +202,8 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "ad32b45e-6ec0-446d-964b-b189842d5d4f",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "93bd64de-4d76-45f0-98f4-41b7f8aaf2b3"
                         },
                         {
                             "name": "CardiacArrestAfter12h",
@@ -246,7 +250,8 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "a4bbf522-839f-4a62-b3df-d6de37141f4a",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "2b1e220d-23ae-4099-a571-95a827a7308e"
                         },
                         {
                             "name": "CardiogenicShockAfter12h",
@@ -293,7 +298,8 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "8b914a31-1968-4202-a7fe-f6065d3cfb3f",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "9919f940-73b7-4ed8-a481-e4112a71e17a"
                         },
                         {
                             "name": "AcuteHeartFailureKillipClass",
@@ -344,7 +350,8 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "c8f2299e-4a95-41a3-835f-f8d5f54cd119",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "a0eddd56-1a5d-44bd-823a-f4cef3cc679c"
                         }
                     ],
                     "childType": "Group_Observation",
@@ -389,7 +396,8 @@
                             "type": "document",
                             "GUID": "0bdf60be-478c-4c7b-87db-f82e70926c7b",
                             "required": true,
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "2a5fccb7-ae99-48e1-9de8-1573b19d5ffd"
                         }
                     ],
                     "childType": "Group_Contact",
@@ -462,7 +470,8 @@
                             "type": "document",
                             "GUID": "d17af809-587f-4401-a6b6-dcea731a4d22",
                             "required": true,
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "74b3d0d1-3107-4050-ac9a-7f4fa179199d"
                         }
                     ],
                     "childType": "Group_Diagnosis",
@@ -477,7 +486,7 @@
             },
             "isActivated": true,
             "additionalProperties": false,
-            "dbVersion": "v1.0.0",
+            "dbVersion": "1.0.0",
             "GUID": "0aa23230-28e6-4ac5-8d66-a3c4840bd746",
             "bucketId": "a8c3c650-5799-4100-84a4-7394f0567763",
             "dbNameShort": "DanAKS"
