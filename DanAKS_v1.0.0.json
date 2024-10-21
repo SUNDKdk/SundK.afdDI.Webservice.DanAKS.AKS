@@ -57,15 +57,16 @@
                                     "childType": "Attribute_StatusCode",
                                     "type": "document",
                                     "GUID": "9714a777-edd2-499a-a4fb-dd70bf26d832",
-                                    "description": "Rehabilitation.",
+                                    "description": "Status på patientens rehabilitering.",
                                     "error": {}
                                 }
                             ],
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "e04cf9ef-2880-4e4a-8b1e-8d12cceaff48",
-                            "error": {},
-                            "ChangeLogID": "099884e0-5fa7-43e3-b354-286e718102d3"
+                            "ChangeLogID": "099884e0-5fa7-43e3-b354-286e718102d3",
+                            "realName": "Rehabilitering",
+                            "error": {}
                         }
                     ],
                     "childType": "Group_Activity",
@@ -111,15 +112,16 @@
                                     "childType": "Attribute_StatusCode",
                                     "type": "document",
                                     "GUID": "d5d0e845-54e2-489c-939a-e7c3e176f592",
-                                    "description": "Echocardiography performed.",
+                                    "description": "Er Ekkokardiografi udført?",
                                     "error": {}
                                 }
                             ],
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "a84e188b-9b0d-4a98-a8df-8577ecc3aeaf",
-                            "error": {},
-                            "ChangeLogID": "e979e2e2-b0fb-4cad-af78-7d671633ba4f"
+                            "ChangeLogID": "e979e2e2-b0fb-4cad-af78-7d671633ba4f",
+                            "realName": "Ekkokardiografi",
+                            "error": {}
                         },
                         {
                             "name": "LVEF",
@@ -151,15 +153,16 @@
                                     "childType": "Attribute_ResultValue",
                                     "type": "document",
                                     "GUID": "08016279-e7ab-4b4b-8c3c-bd6d862fd6ea",
-                                    "description": "LVEF: Left ventricular ejection fraction.",
+                                    "description": "Venstre ventrikels uddrivningsfraktion (LVEF: Left ventricular ejection fraction)",
                                     "error": {}
                                 }
                             ],
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "f4dfa656-54c9-4cd0-969b-497aed3abca3",
-                            "error": {},
-                            "ChangeLogID": "b3e14716-517f-44f8-8e52-730294cba830"
+                            "ChangeLogID": "b3e14716-517f-44f8-8e52-730294cba830",
+                            "realName": "Venstre ventrikels uddrivningsfraktion",
+                            "error": {}
                         },
                         {
                             "name": "CardiacArrestWithin12h",
@@ -195,15 +198,16 @@
                                     "childType": "Attribute_ResultValue",
                                     "type": "document",
                                     "GUID": "644dd7e4-6d0a-430f-9051-fe4c578f439a",
-                                    "description": "Cardiac arrest prehospital or within 12 hours after hospitalization.",
+                                    "description": "Hjertestop før ankomst til hospitalet eller inden for 12 timer efter indlæggelse.",
                                     "error": {}
                                 }
                             ],
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "ad32b45e-6ec0-446d-964b-b189842d5d4f",
-                            "error": {},
-                            "ChangeLogID": "93bd64de-4d76-45f0-98f4-41b7f8aaf2b3"
+                            "ChangeLogID": "93bd64de-4d76-45f0-98f4-41b7f8aaf2b3",
+                            "realName": "Hjertestop (indenfor 12 timer)",
+                            "error": {}
                         },
                         {
                             "name": "CardiacArrestAfter12h",
@@ -243,15 +247,16 @@
                                     "childType": "Attribute_ResultValue",
                                     "type": "document",
                                     "GUID": "64db8f07-36f5-418d-a227-ffed1234b872",
-                                    "description": "Cardiogenic shock later than 12 hours after hospitalization.",
+                                    "description": "Hjertestop senere end 12 timer efter indlæggelse.",
                                     "error": {}
                                 }
                             ],
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "a4bbf522-839f-4a62-b3df-d6de37141f4a",
-                            "error": {},
-                            "ChangeLogID": "2b1e220d-23ae-4099-a571-95a827a7308e"
+                            "ChangeLogID": "2b1e220d-23ae-4099-a571-95a827a7308e",
+                            "realName": "Hjertestop (efter 12 timer)",
+                            "error": {}
                         },
                         {
                             "name": "CardiogenicShockAfter12h",
@@ -291,15 +296,16 @@
                                     "childType": "Attribute_ResultValue",
                                     "type": "document",
                                     "GUID": "53e98160-f99e-48e1-a99f-a2b46e6cf9d1",
-                                    "description": "CardiogenicShock later than 12 hours after hospitalization",
+                                    "description": "Kardiogent shock senere end 12 timer efter indlæggelse.",
                                     "error": {}
                                 }
                             ],
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "8b914a31-1968-4202-a7fe-f6065d3cfb3f",
-                            "error": {},
-                            "ChangeLogID": "9919f940-73b7-4ed8-a481-e4112a71e17a"
+                            "ChangeLogID": "9919f940-73b7-4ed8-a481-e4112a71e17a",
+                            "realName": "Kardiogent shock (efter 12 timer)",
+                            "error": {}
                         },
                         {
                             "name": "AcuteHeartFailureKillipClass",
@@ -343,15 +349,16 @@
                                     "childType": "Attribute_ResultValue",
                                     "type": "document",
                                     "GUID": "757a36df-e659-49d9-9ef6-9b7f43b68d13",
-                                    "description": "Killip class within 12 hours after hospitalization.",
+                                    "description": "Killip klasse indenfor 12 timer efter indlæggelse.",
                                     "error": {}
                                 }
                             ],
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "c8f2299e-4a95-41a3-835f-f8d5f54cd119",
-                            "error": {},
-                            "ChangeLogID": "a0eddd56-1a5d-44bd-823a-f4cef3cc679c"
+                            "ChangeLogID": "a0eddd56-1a5d-44bd-823a-f4cef3cc679c",
+                            "realName": "Killip klasse",
+                            "error": {}
                         }
                     ],
                     "childType": "Group_Observation",
@@ -388,7 +395,7 @@
                                     "type": "document",
                                     "GUID": "6d01316b-39d0-49d6-a35d-028923677771",
                                     "required": true,
-                                    "description": "Date and time for admission.",
+                                    "description": "Dato og tid for indlæggelse.",
                                     "error": {}
                                 }
                             ],
@@ -396,8 +403,9 @@
                             "type": "document",
                             "GUID": "0bdf60be-478c-4c7b-87db-f82e70926c7b",
                             "required": true,
-                            "error": {},
-                            "ChangeLogID": "2a5fccb7-ae99-48e1-9de8-1573b19d5ffd"
+                            "ChangeLogID": "2a5fccb7-ae99-48e1-9de8-1573b19d5ffd",
+                            "realName": "Indlæggelsesdato",
+                            "error": {}
                         }
                     ],
                     "childType": "Group_Contact",
@@ -462,7 +470,7 @@
                                     "type": "document",
                                     "GUID": "6b38533b-39d2-42ca-bebb-45be72c80eff",
                                     "required": true,
-                                    "description": "Final diagnosis verified by cardiologist at discharge.",
+                                    "description": "Den endelige diagnose verificeret af kardiolog ved udskrivelse.",
                                     "error": {}
                                 }
                             ],
@@ -470,8 +478,9 @@
                             "type": "document",
                             "GUID": "d17af809-587f-4401-a6b6-dcea731a4d22",
                             "required": true,
-                            "error": {},
-                            "ChangeLogID": "74b3d0d1-3107-4050-ac9a-7f4fa179199d"
+                            "ChangeLogID": "74b3d0d1-3107-4050-ac9a-7f4fa179199d",
+                            "realName": "Bekræftet diagnose",
+                            "error": {}
                         }
                     ],
                     "childType": "Group_Diagnosis",
@@ -573,7 +582,7 @@
     "creationTS": "2024-01-08T10:59:47.614Z",
     "GUID": "5f027223-5343-4f1a-b38c-0ae6930c89a6",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-01-22T10:16:23.814Z",
+    "lastModifTS": "2024-10-21T15:26:41.136Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
