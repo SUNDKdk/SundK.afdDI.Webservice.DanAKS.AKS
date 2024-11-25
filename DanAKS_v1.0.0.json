@@ -499,7 +499,8 @@
             "GUID": "0aa23230-28e6-4ac5-8d66-a3c4840bd746",
             "bucketId": "a8c3c650-5799-4100-84a4-7394f0567763",
             "dbNameShort": "DanAKS",
-            "dbSchema": "AKS"
+            "dbSchema": "AKS",
+            "docLink": "https://rkkpdk.github.io/RKKP.afdDI.Webservice.DanAKS.AKS/"
         }
     ],
     "buckets": [
@@ -583,7 +584,7 @@
     "creationTS": "2024-01-08T10:59:47.614Z",
     "GUID": "5f027223-5343-4f1a-b38c-0ae6930c89a6",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-10-22T08:23:04.010Z",
+    "lastModifTS": "2024-11-25T11:42:26.560Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
