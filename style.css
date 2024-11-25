@@ -11,6 +11,7 @@
 	--colorRRKP-hover: #abbe2b;
 
 	--colorContactActiveFix: 	rgba(170,68,153, 0.7);
+	--colorBorderColor: rgba(0,0,0,0.2);
 }
 
 body {
@@ -27,6 +28,13 @@ p {
 
 main {
 	min-height: 1000px;
+}
+
+h6 {
+	margin-top: 0.7rem;
+	margin-bottom: 0.3rem;
+	font-weight: 600;
+	font-size: 0.8rem !important;
 }
 
 .required {
@@ -80,9 +88,16 @@ main {
 	color: var(--colorRKKP);
 }
 
-.nav-tabs .nav-link {
+.nav-tabs {
     margin-bottom: 0 !important;
     border: var(--bs-nav-tabs-border-width) solid transparent;
+    border-top-left-radius: var(--bs-nav-tabs-border-radius);
+    border-top-right-radius: var(--bs-nav-tabs-border-radius);
+	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+}
+
+.nav-tabs .nav-link {
+	border: var(--bs-nav-tabs-border-width) solid transparent;
     border-top-left-radius: var(--bs-nav-tabs-border-radius);
     border-top-right-radius: var(--bs-nav-tabs-border-radius);
 }
@@ -90,6 +105,12 @@ main {
 .nav-tabs .nav-link.active {
 	--bs-bg-opacity: 1;
 	background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: var(--bs-nav-tabs-link-active-color);
+    background-color: var(--bs-nav-tabs-link-active-bg);
+    border-color: var(--colorBorderColor);
 }
 
 .alert-tertiary {
@@ -119,16 +140,19 @@ main {
 
 /* Layout */
 
-.container-border {
-	border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-	border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-	margin-bottom: 10px;
-	padding-top: 25px;
+.main-container-style {
+	border-top: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-left: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-right: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+}
+
+.header-style {
+	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
 }
 
 .table-group-divider {
-	border-top: calc(var(--bs-border-width) * 2) solid var(--bs-border-color);
+	border-top: calc(var(--bs-border-width) * 2) solid var(--colorBorderColor);
 }
 
 .switch-size {
@@ -136,11 +160,11 @@ main {
 }
 
 .th-attribute {
-	width: 25% !important;
+	width: 10% !important;
 }
 
 .th-description {
-	width: 35% !important;
+	width: 30% !important;
 }
 
 .th-type {
@@ -148,11 +172,11 @@ main {
 }
 
 .th-value {
-	width: 15% !important;
+	width: 30% !important;
 }
 
 .th-required {
-	width: 10% !important;
+	width: 0% !important;
 }
 
 .object_margin {
@@ -195,7 +219,7 @@ main {
 	border-top-left-radius: 5px !important;
 	border-top-right-radius: 5px !important;
 	align-items: center !important;
-	border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+	border: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
 
 }
 
@@ -211,14 +235,14 @@ main {
 	padding: .5rem .5rem !important;
 	margin: 0rem 0rem 0rem 0rem !important;
 	border-radius: 0px !important;
-	border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-	border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+	border-right: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-left: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
 }
 
 .objectBodyMain {
-	border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-	border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+	border-left: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-right: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
 	border-bottom-left-radius: 5px !important;
 	border-bottom-right-radius: 5px !important;
 	margin-top: -1rem !important;
@@ -298,4 +322,8 @@ main {
 
 .objectHeaderGray {
 	background-color: var(--colorGray);
+}
+
+.breadcrumb-item.active {
+    color: var(--bs--body-color);
 }
