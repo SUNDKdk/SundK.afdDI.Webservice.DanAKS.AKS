@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+	--colorGray: rgba(205, 205, 205, 0.4);
+
+	--colorSundK: #162E59;
+	--colorSundK-hover: #162e59;
+	--colorSundK-text: #fff;
+	--colorSundK-lightblue: #D8E5FF;
+	--colorSundK-lightpurple: #e6e0ff;
+}
+
+body {
+	margin: 0;
+	padding-top: 150px;	
+}
+
+p {
+	font-family: "Host Grotesk", serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+}
+
+strong {
+	font-family: "Host Grotesk", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+}
+
+li {
+	font-family: "Host Grotesk", serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.card {
+	font-family: "Host Grotesk", serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.lead {
+		font-family: "Host Grotesk", serif;
+		font-optical-sizing: auto;
+		font-weight: 300;
+		font-style: normal;
+}
+
+.box-lightblue {
+	background-color: var(--colorSundK-lightblue);
+}
+
+.box-lightpurple {
+	background-color: var(--colorSundK-lightpurple);
+}
+
+.btn {
+    --bs-btn-font-family: ;
+    --bs-btn-font-size: 0.875rem;
+    --bs-btn-line-height: 1.25;
+}
+
+.btn-lg {
+	font-size: 1.3rem;
+	font-weight: 300;
+	padding: 0.7rem 1.4rem;
+}
+
+.btn-info {
+	--bs-btn-color: var(--colorSundK-text);
+	--bs-btn-bg: var(--colorSundK);
+	--bs-btn-border-color: var(--colorSundK);
+	--bs-btn-hover-color: var(--colorSundK-text);
+	--bs-btn-hover-bg: var(--colorSundK-hover);
+	--bs-btn-hover-border-color: var(--colorSundK-hover);
+	--bs-btn-focus-shadow-rgb: 11, 172, 204;
+	--bs-btn-active-color: var(--colorSundK-text);
+	--bs-btn-active-bg: var(--colorSundK-hover);
+	--bs-btn-active-border-color: var(--colorSundK-hover);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: var(--colorSundK-text);
+	--bs-btn-disabled-bg: var(--colorSundK);
+	--bs-btn-disabled-border-color: var(--colorSundK);
+}
+
+.btn-outline-info {
+	--bs-btn-color: var(--colorSundK-text);
+	--bs-btn-border-color: var(--colorSundK);
+	--bs-btn-hover-color: var(--colorSundK-text);
+	--bs-btn-hover-bg: var(--colorSundK);
+	--bs-btn-hover-border-color: var(--colorSundK);
+	--bs-btn-focus-shadow-rgb: 13, 202, 240;
+	--bs-btn-active-color: var(--colorSundK-text);
+	--bs-btn-active-bg: var(--colorSundK);
+	--bs-btn-active-border-color: var(--colorSundK);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: var(--colorSundK);
+	--bs-btn-disabled-bg: transparent;
+	--bs-btn-disabled-border-color: var(--colorSundK);
+	--bs-gradient: none;
+}
+
+.bg-sundk {
+    --bs-bg-opacity: 1;
+    background-color: var(--colorSundK) !important;
+}
+
+.card {
+	--bs-card-border-radius: 0px;
+}
+
+.form-check-input:checked {
+	background-color: var(--colorSundK);
+	border-color: var(--colorSundK);
+}
+
+.navbar-brand {
+	color: black;
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover {
+	color: black;
+}
+
+.navbar {
+	border-bottom: 1px solid darkgray;
+}
+
+.navbar-collapse {
+	padding: 10px 0px 10px 0px;
+	margin: 7px 0px 0px 0px;
+}
+
+.accordion {
+	--bs-accordion-bg: transparent;
+	--bs-accordion-border-width: 0px;
+	--bs-accordion-inner-border-radius: 0px;
+	--bs-accordion-btn-padding-x: 1.25rem;
+	--bs-accordion-btn-padding-y: 1rem;
+	--bs-accordion-btn-icon-width: 1.25rem;
+	--bs-accordion-btn-icon-transform: rotate(-180deg);
+	--bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+	--bs-accordion-btn-focus-box-shadow: 0;
+	--bs-accordion-body-padding-x: 1.25rem;
+	--bs-accordion-body-padding-y: 1rem;
+	--bs-accordion-active-bg: transparent;
+}

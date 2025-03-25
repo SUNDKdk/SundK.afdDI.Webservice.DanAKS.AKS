@@ -159,55 +159,6 @@ function toggleGrayscale() {
     }
 };
 
-/*
-
-    Table View
-
-*/
-
-var checkboxFlatView = document.getElementById('toggleFlatView');
-checkboxFlatView.addEventListener('change', toggleFlatView);
-
-function toggleFlatView() {
-    var elements = document.querySelectorAll('.objectHeaderMain, .objectDescription, .objectBodyMain, .object_margin, .table_view_hider')
-
-    elements.forEach(function (element) {
-        if (checkboxFlatView.checked) {
-            if (element.classList.contains("objectHeaderMain")) {
-                element.classList.add("objectHeaderMainFlatView");
-            }
-
-            if (element.classList.contains("objectDescription")) {
-                element.classList.add("objectDescriptionFlatView");
-            }
-            if (element.classList.contains("objectBodyMain")) {
-                element.classList.add("objectBodyMainFlatView");
-            }
-            if (element.classList.contains("object_margin")) {
-                element.classList.add("remove_object_margin");
-            }
-            if (element.classList.contains("table_view_hider")) {
-                element.classList.add("hidden");
-            }
-        } else {
-            if (element.classList.contains("objectHeaderMainFlatView")) {
-                element.classList.remove("objectHeaderMainFlatView");
-            }
-            if (element.classList.contains("objectDescriptionFlatView")) {
-                element.classList.remove("objectDescriptionFlatView");
-            }
-            if (element.classList.contains("objectBodyMainFlatView")) {
-                element.classList.remove("objectBodyMainFlatView");
-            }
-            if (element.classList.contains("object_margin")) {
-                element.classList.remove("remove_object_margin");
-            }
-            if (element.classList.contains("table_view_hider")) {
-                element.classList.remove("hidden");
-            }
-        }
-    })
-};
 
 /*
 
